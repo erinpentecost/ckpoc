@@ -37,15 +37,6 @@ local FollowerDetectionUtil = interfaces.FollowerDetectionUtil
 ---@type {[string]: QuestContainer}
 local activeQuests = {}
 
----@param quest Quest
-local function onQuestCompleted(quest)
-    --- update mw vars
-    core.sendGlobalEvent(MOD_NAME .. "onDeliveryQuestCompleted", {
-        player = pself.object,
-        quest = quest,
-    })
-end
-
 local function updateActiveQuests()
     local quests = types.Player.quests(pself)
 
@@ -57,8 +48,10 @@ local function updateActiveQuests()
                     metaData = allQuests[questId],
                     playerQuest = quest
                 }
-            elseif (quest.stage == allQuests[questId].reportStage) or (quest.stage == allQuests[questId].lostStage) then
-                onQuestCompleted(allQuests[questId])
+            elseif (quest.stage == allQuests[questId].lostStage) then
+                core.sendGlobalEvent(MOD_NAME .. "onUrnLost", {
+                    player = pself,
+                })
             end
         end
     end
