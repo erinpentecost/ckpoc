@@ -1,25 +1,3 @@
-## Slop overview from conversation
-
-**Project Concept:** A Tribunal Temple-focused Morrowind mod centered on delivering and interning ancestral remains at ancestral tombs across Morrowind, with gameplay mechanics built around physical transport challenges and optional illicit alternative routes.
-
-### Key Gameplay Mechanics
-
-* **Physical Urn Delivery:** Players must transport heavy (~40 lbs) urns to specific tombs. Transporting an urn applies heavy movement debuffs and restricts active combat.
-* **Carrying Restrictions:** Drawing a weapon, casting a spell, swimming, or bringing up your hands drops the urn onto the ground. Fast travel is permitted, but standard combat or magic while moving is restricted.
-* **Visual Representation:** The urn is visually equipped as a back-strapped container (using a cloth Furoshiki-style harness/backpack model) or represented by custom upper-body carrying animations.
-* **Completion Conditions:** Quests require deeper tomb exploration or simply dropping the urn at the tomb entrance. Clearing out restless spirits or tomb raiders or vampires yields bonus rewards.
-* **Travel & Encounter Hazards:** Maybe carrying the urn increases enemy spawn rates along the overland route. Unstable weather (like rain) or hazards could introduce additional transport difficulties or risk damaging the urn.
-
-### Questing & Narrative Structure
-
-* **Handcrafted Quests:** Due to game engine/dialogue constraints, quests will be explicitly scripted for individual tombs rather than fully randomized, starting with a core set of initial local deliveries.
-* **Temple Progression:** Begins with simple local deliveries from a main hub (e.g., Necrom or local Temples).
-* **Tomb Interactions:** May require reporting specific tomb details back to a supervisor or confronting spawned ancestral ghosts who question the player's intentions before internment.
-
-### Alternate/Illicit Paths
-
-* **Faction Cross-Over:** Special illicit options become available if the player holds dual membership in both the Temple and the Narsis syndicate, allowing them to redirect urn deliveries directly to cartel HQ.
-
 ## Writing Notes
 
 - Dunmer that don't have a family tomb get mostly buried in Necrom. A portion of them is interred in the local temple for visiting families and another portion goes to the Ghostfence.
@@ -28,7 +6,7 @@
 - This means the Temple strictly controls the processing of Dunmer remains.
 - Post-main-quest, there could be a massive undertaking to dismantle the Ghostfence and restore as many of the identifiable remains as possible to their family tombs.
 - Pre-main-quest, Feldrelo Sadri might need many remains removed from the Balmora Temple because of pending renovation?
-- Maybe the dedication of remains to the Ghostfence was not in perpetuity, and due to a recent court ruling, the oldest remains must be relocated to their respective tombs. This means temples everywhere will have a ton of urns to move out. *i like this one. it's crazy disruptive* Maybe just limit it to -new- burials, owing to the difficulty of sifting existing remains.
+- Maybe the dedication of remains to the Ghostfence was not in perpetuity, and due to a recent court ruling, the oldest remains must be relocated to their respective tombs. This means temples everywhere will have a ton of urns to move out. *i like this one. it's crazy disruptive*. make it so the legal opening only became actionable once Vvardenfell was reorganized into an Imperial Provincial District in 3E 414.
 
 ## Blessed Lore Notes
 
@@ -70,6 +48,4 @@ The lawyers file a sweeping, province-wide class-action lawsuit, alleging that t
 The Ruling: The Edict of Exhumation
 Fearing massive economic boycotts from House Hlaalu and civil unrest from House Indoril, the Imperial Commission compromises with a sweeping structural mandate:The "Volitional Grandfather" Clause: The court rules that any Dunmer interred in a registered clan tomb prior to the official Temple declaration of the Ghostfence (3E 400) was seized unlawfully if no explicit family waiver was signed.
 The Mass Mandate: The Tribunal Temple is ordered to cease using "Pre-3E 400" spirits to anchor the collective barrier.
-The Execution: The court mandates that the Keepers of the Dead in Necrom must systematically untangle, decouple, and filter out the distinct "frequencies" and physical bone ash of over 40,000 class-action claimants from the central Ghostfence machine.
-The Aftermath in the Late 3E
-This massive ruling triggers a logistical nightmare across Morrowind. Caravan lines of Temple Waking Guides are forced to transport massive vaults of returned ash from the Ghostgate back to the mainland, filling the Ancestral Tombs once more.Crucially, this legal victory drastically weakens the structural integrity of the Ghostfence, directly explaining why the barrier is failing so catastrophically by the time the player arrives in TES3: Morrowind.
+The Execution: The court mandates that the Keepers of the Dead in Necrom, in conjuction with Temple representives in Vvardenfell, must systematically untangle, decouple, and filter out the distinct "frequencies" and physical bone ash of over 40,000 class-action claimants from the central Ghostfence machine.
