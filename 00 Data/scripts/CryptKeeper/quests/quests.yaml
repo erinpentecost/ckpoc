@@ -17,12 +17,13 @@ quests:
       - id: gold_001
         count: 100
   - id: "ck_balmora_heran"
-    disable: true
     # https://en.uesp.net/wiki/Morrowind:Heran_Ancestral_Tomb - looted, loose daedra!
     order: 2
     startCell: "Balmora, Temple"
     destCell: "Heran Ancestral Tomb"
     urnName: "Remains of Joveth Heran"
+    destCellEnterStage: 39
+    destCellClearedStage: 40
     rewards:
       - id: gold_001
         count: 100

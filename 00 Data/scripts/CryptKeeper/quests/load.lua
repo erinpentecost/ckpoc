@@ -81,6 +81,18 @@ local function load()
                 if v.lostStage == nil then
                     v.lostStage = 200
                 end
+                if (v.destCellEnterStage == nil) == (v.destCellClearedStage) then
+                    error("destCellClearedStage and destCellEnterStage must both be set or unset, not mixed")
+                    return
+                end
+                if v.destCellEnterStage and v.destCellEnterStage >= v.placeStage then
+                    error("destCellEnterStage must be < placeStage")
+                    return
+                end
+                if v.destCellClearedStage and v.destCellClearedStage >= v.placeStage  then
+                    error("destCellClearedStage must be < placeStage")
+                    return
+                end
                 v.id = v.id:lower()
                 v.destCell = v.destCell:lower()
                 v.startCell = v.startCell:lower()
