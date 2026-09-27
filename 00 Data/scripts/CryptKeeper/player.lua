@@ -37,6 +37,28 @@ local FollowerDetectionUtil = interfaces.FollowerDetectionUtil
 ---@type {[string]: QuestContainer}
 local activeQuests = {}
 
+---@param quest Quest
+local function onQuestCompleted(quest)
+    --- update mw vars
+    core.sendGlobalEvent(MOD_NAME .. "onDeliveryQuestCompleted", {
+        player = pself.object,
+        quest = quest,
+    })
+    --- kickstart next quest in the same start cell
+    --- this lets me pick a random quest.
+    --- step 1: filter all quests to only those that are not started
+    --- step 2: filter all quests to only those with the same start cell
+    --- step 3: find lowest 'order' value of remaining quests
+    --- step 4: filter remaining quests to just those that have same lowest 'order' we just found
+    --- step 5: shuffle the remaining quests
+    --- step 6: grab the first quest of those that remain, and set its stage to 1.
+    --[[local playerQuests = types.Player.quests(pself)
+    for questID, questData in pairs(allQuests) do
+        if playerQuests[questID]
+    end]]
+
+end
+
 local function updateActiveQuests()
     local quests = types.Player.quests(pself)
 
@@ -49,10 +71,7 @@ local function updateActiveQuests()
                     playerQuest = quest
                 }
             elseif quest.stage == allQuests[questId].reportStage then
-                core.sendGlobalEvent(MOD_NAME .. "onDeliveryQuestCompleted", {
-                    player = pself.object,
-                    quest = allQuests[questId],
-                })
+                onQuestCompleted(quest)
             end
         end
     end
