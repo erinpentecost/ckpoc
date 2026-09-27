@@ -61,37 +61,45 @@ local function onQuestStart(data)
     settings.debugPrint("onQuestStart: " .. aux_util.deepToString(data, 5))
     --- generate the urn and give it to the player
 
-    --- MiscellaneousRecord
-    local itemRecordDraft = types.Miscellaneous.createRecordDraft({
-        icon = urnIconPath,
-        isKey = false,
-        model = urnMeshPath,
-        name = data.quest.urnName,
-        value = 0,
-        weight = 40,
-    })
-    local itemRecord = world.createRecord(itemRecordDraft)
+    local cachedRecords = persist.urnRecords[data.quest.id]
+
+    local itemRecordID = cachedRecords and cachedRecords.itemRecordId
+    if itemRecordID == nil then
+        local itemRecordDraft = types.Miscellaneous.createRecordDraft({
+            icon = urnIconPath,
+            isKey = false,
+            model = urnMeshPath,
+            name = data.quest.urnName,
+            value = 0,
+            weight = 40,
+        })
+        local itemRecord = world.createRecord(itemRecordDraft)
+        itemRecordID = itemRecord.id
+    end
 
 
-    local containerRecordDraft = types.Container.createRecordDraft({
-        isOrganic = false,
-        isRespawning = false,
-        model = urnMeshPath,
-        name = data.quest.urnName,
-        --- this is capacity now.
-        --- make it big so people can use a tomb as a home base comfortably
-        weight = 500,
-    })
+    local containerRecordID = cachedRecords and cachedRecords.containerRecordId
+    if containerRecordID == nil then
+        local containerRecordDraft = types.Container.createRecordDraft({
+            isOrganic = false,
+            isRespawning = false,
+            model = urnMeshPath,
+            name = data.quest.urnName,
+            --- this is capacity now.
+            --- make it big so people can use a tomb as a home base comfortably
+            weight = 500,
+        })
+        local containerRecord = world.createRecord(containerRecordDraft)
+        containerRecordID = containerRecord.id
+    end
 
-    local containerRecord = world.createRecord(containerRecordDraft)
-
-    local recordInstance = world.createObject(itemRecord.id, 1)
-    settings.debugPrint("made new urn record (" .. tostring(itemRecord.id) .. ") - " .. data.quest.urnName)
+    local recordInstance = world.createObject(itemRecordID, 1)
+    settings.debugPrint("made new urn record (" .. tostring(itemRecordID) .. ") - " .. data.quest.urnName)
     if not recordInstance:hasScript(urnItemScriptPath) then
         recordInstance:addScript(urnItemScriptPath, {
             quest = data.quest,
-            itemRecordId = itemRecord.id,
-            containerRecordId = containerRecord.id
+            itemRecordId = itemRecordID,
+            containerRecordId = containerRecordID
         })
     end
     recordInstance:moveInto(data.player)
@@ -106,8 +114,8 @@ local function onQuestStart(data)
         --urn = recordInstance,
         --cell = data.player.cell.id,
         --player = data.player,
-        itemRecordId = itemRecord.id,
-        containerRecordId = containerRecord.id
+        itemRecordId = itemRecordID,
+        containerRecordId = containerRecordID
     }
     persist.urnRecords[data.quest.id] = payload
     data.player:sendEvent(MOD_NAME .. "onUrnInfo", persist.urnRecords)
