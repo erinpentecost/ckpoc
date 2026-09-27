@@ -167,6 +167,7 @@ end
 local function onActive()
     onCellLoaded()
     updateActiveQuests()
+    pself.type.addTopic(pself, const.TOPIC_ASH_INTERMENT)
 end
 
 local inventory = types.Actor.inventory(pself)
@@ -313,7 +314,7 @@ local function DialogueResponse(data)
     end
 
     for _, info in pairs(topic.infos) do
-        if info.id == data.infoId then
+        if (info.id == data.infoId) and info.resultScript then
             if info.resultScript:find(const.MWS_LOST_URN_TOKEN, 1, true) then
                 onQuestFailed(data)
             end

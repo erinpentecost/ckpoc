@@ -28,9 +28,10 @@ URN_DELIVERY_ACTIVE_GVAR=1 AND HAS_URN_GVAR=0: "Was the internment successful?" 
        The mwscript should reduce reputation in the faction and damage disposition, too.
     - "I'm working on it." No side-effects.
 
+
 Urn quest stage is 50: "<custom success completion response for the quest>". Advance quest stage to 100 in the mwscript, and grant reputation and rewards! There's one of these per delivery quest.
 
-Previous quest's stage is 100 or 200: "<custom dialogue for start of next quest. should tell you where it is and if you're ready to pick up the urn now>". There's one of these per delivery quest. Choice of responding:
+URN_DELIVERY_ACTIVE_GVAR!=1 and quest stage is 0: "<custom dialogue for start of next quest. should tell you where it is and if you're ready to pick up the urn now>". There's one of these per delivery quest. Choice of responding:
     - "I'm ready. Give me the urn." Advance quest stage to 10 in the mwscript!
     - "Not yet." No side-effects.
 ]]
