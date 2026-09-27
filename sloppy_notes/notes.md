@@ -28,7 +28,7 @@
 - This means the Temple strictly controls the processing of Dunmer remains.
 - Post-main-quest, there could be a massive undertaking to dismantle the Ghostfence and restore as many of the identifiable remains as possible to their family tombs.
 - Pre-main-quest, Feldrelo Sadri might need many remains removed from the Balmora Temple because of pending renovation?
-- Maybe the dedication of remains to the Ghostfence was not in perpetuity, and due to a recent court ruling, the oldest remains must be relocated to their respective tombs. This means temples everywhere will have a ton of urns to move out. *i like this one*
+- Maybe the dedication of remains to the Ghostfence was not in perpetuity, and due to a recent court ruling, the oldest remains must be relocated to their respective tombs. This means temples everywhere will have a ton of urns to move out. *i like this one. it's crazy disruptive*
 
 ## Blessed Lore Notes
 
@@ -57,3 +57,19 @@ Publisher's Note
 
 This book was written by an unknown scholar as a guide for foreign visitors to Morrowind shortly after the Armistice was signed. Many of these practices have since fallen into disfavor. The most obvious changes are those regarding the practice of Necromancy and the Great Ghostfence. Dunmer today regard Necromancy upon any of the accepted races as an abomination. The Ghostfence has forced many changes in the practice of ancestor worship. With the vast majority of ancestors' remains going to strengthen the Great Ghostfence around the mountain of Dagoth Ur, there are very few clan ghost fences in Morrowind. The Temple discourages such practices among the Houses as selfish. The upkeep of family tombs and private Waiting Doors has also fallen into disfavor, as very few remains have been buried in these tombs and shrines since the Armistice. In recent years most Dunmer venerate a small portion of their ancestor's remains kept at a local temple. 
 ```
+
+## sloppy proposal
+
+The Case: The Houses Allied v. The Archcanonry of ALMSIVI1.
+The Discovery of the Fraud (The "Pre-Armistice" Loophole)
+The Barristers Guild uncovers a massive historic clerical violation. When Tiber Septim signed the Armistice with Vivec in 2E 896, the treaty guaranteed that the Empire would never interfere with Morrowind's religious traditions—specifically Ancestor Worship and the sovereign right of Dunmer clans to control their family crypts.However, the Great Ghostfence was not built until centuries later (around 3E 400), as Dagoth Ur's Blight storms grew out of control. To build it, the Temple systematically went into mainland and Vvardenfell tombs to conscript centuries worth of bodies. 
+
+The Mass-Action Argument
+The lawyers file a sweeping, province-wide class-action lawsuit, alleging that the Temple committed mass Breach of the Armistice via Retrospective Soul Seizure.The Barristers argue that while the Armistice protects traditional ancestor worship, the Ghostfence is a new, non-traditional state utility. Because thousands of the dead buried between 2E 896 and 3E 400 died under the legal assumption that they would remain in their local clan vaults, the Temple retroactively violated their posthumous legal rights without familial consent.Furthermore, because the Temple relies heavily on the wealth of the Great Houses, the Barristers prove economic damages: by stripping ancestral tombs of their guardian spirits to power the Ghostfence, the Temple left hundreds of private estate vaults completely defenseless against grave robbers, directly devaluing House property assets.
+
+The Ruling: The Edict of Exhumation
+Fearing massive economic boycotts from House Hlaalu and civil unrest from House Indoril, the Imperial Commission compromises with a sweeping structural mandate:The "Volitional Grandfather" Clause: The court rules that any Dunmer interred in a registered clan tomb prior to the official Temple declaration of the Ghostfence (3E 400) was seized unlawfully if no explicit family waiver was signed.
+The Mass Mandate: The Tribunal Temple is ordered to cease using "Pre-3E 400" spirits to anchor the collective barrier.
+The Execution: The court mandates that the Keepers of the Dead in Necrom must systematically untangle, decouple, and filter out the distinct "frequencies" and physical bone ash of over 40,000 class-action claimants from the central Ghostfence machine.
+The Aftermath in the Late 3E
+This massive ruling triggers a logistical nightmare across Morrowind. Caravan lines of Temple Waking Guides are forced to transport massive vaults of returned ash from the Ghostgate back to the mainland, filling the Ancestral Tombs once more.Crucially, this legal victory drastically weakens the structural integrity of the Ghostfence, directly explaining why the barrier is failing so catastrophically by the time the player arrives in TES3: Morrowind.
