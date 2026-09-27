@@ -190,22 +190,10 @@ local function getRecord(entity)
     return entity.type.records[entity.recordId]
 end
 
---- TODO this is useless because it's nto all the urns in the current cell
 local function nearbyActiveUrn()
-    local urnItemRecords = {}
-    for _, quest in pairs(activeQuests) do
-        if questsToRecords[quest.metaData.id] then
-            urnItemRecords[questsToRecords[quest.metaData.id].itemRecordId] = quest.metaData.id
-        end
-    end
-
-    for _, itm in ipairs(nearby.items) do
-        local attachedQuest = urnItemRecords[getRecord(itm).id]
-        if attachedQuest ~= nil then
-            return {
-                item = itm,
-                quest = attachedQuest
-            }
+    for questID, _ in pairs(activeQuests) do
+        if latestPlacedUrns[questID] then
+            return latestPlacedUrns[questID].urn
         end
     end
     return nil
@@ -247,8 +235,7 @@ local function onUpdate(dt)
                 quest.playerQuest:addJournalEntry(quest.metaData.destCellClearedStage, pself)
                 --- if the player put the urn down before killing enemies,
                 --- then we also need to advance the journal up to placeStage
-                local placedUrn = nearbyActiveUrn()
-                if placedUrn and placedUrn.quest.id == currentQuestID then
+                if nearbyActiveUrn() ~= nil then
                     quest.playerQuest:addJournalEntry(quest.metaData.placeStage, pself)
                 end
             end
