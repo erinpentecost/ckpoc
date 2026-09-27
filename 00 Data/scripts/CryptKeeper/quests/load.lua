@@ -30,9 +30,9 @@ local collection = require("scripts.CryptKeeper.collection")
 ---@field id string this is the journal topic id
 ---@field disable boolean? if true, don't load it
 ---@field startStage number the start stage to 'activate' the quest. default 10.
----@field destCellEnterStage number? optional stage on cell enter. can be used for "oh no there are tomb raiders"
----@field destCellClearedStage number? optional stage when all enemies in dest cell are dead. if this is present, then placeStage won't be set until the cell is cleared out.
----@field placeStage number the placement stage. this means they put the urn down. default 49. this should have an entry
+---@field destCellEnterStage number? optional stage on cell enter. can be used for "oh no there are tomb raiders". should be before placeStage (like 39). this is just a notification.
+---@field destCellClearedStage number? optional stage when all enemies in dest cell are dead. if this is present, then placeStage won't be set until the cell is cleared out. should be before placeStage (like 40).
+---@field placeStage number the placement stage. this means they put the urn down. default 49. this should have an entry. this is just a notification. it will be set once all conditions (placed + optionall cleared) are met.
 ---@field placeCompleteStage number the post-placement success stage. this means they left the urn in the tomb. default 50. this should be an empty journal entry
 ---@field reportStage number the post-reported success stage. end stage. default 100.
 ---@field lostStage number if the player gives up or sells the urn. end stage. default 200.

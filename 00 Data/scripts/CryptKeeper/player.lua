@@ -186,6 +186,30 @@ local function UiModeChanged(data)
     end
 end
 
+local function getRecord(entity)
+    return entity.type.records[entity.recordId]
+end
+
+local function nearbyActiveUrn()
+    local urnItemRecords = {}
+    for _, quest in pairs(activeQuests) do
+        if questsToRecords[quest.metaData.id] then
+            urnItemRecords[questsToRecords[quest.metaData.id].itemRecordId] = quest.metaData.id
+        end
+    end
+
+    for _, itm in ipairs(nearby.items) do
+        local attachedQuest = urnItemRecords[getRecord(itm).id]
+        if attachedQuest ~= nil then
+            return {
+                item = itm,
+                quest = attachedQuest
+            }
+        end
+    end
+    return nil
+end
+
 local jitterSeed = 0
 local function jitter(max_jitter)
     jitterSeed = jitterSeed + 1
@@ -220,6 +244,12 @@ local function onUpdate(dt)
             if #enemiesInCurrentDestCell == 0 then
                 --- yay we did it
                 quest.playerQuest:addJournalEntry(quest.metaData.destCellClearedStage, pself)
+                --- if the player put the urn down before killing enemies,
+                --- then we also need to advance the journal up to placeStage
+                local placedUrn = nearbyActiveUrn()
+                if placedUrn and placedUrn.quest.id == currentQuestID then
+                    quest.playerQuest:addJournalEntry(quest.metaData.placeStage, pself)
+                end
             end
         end
     end
