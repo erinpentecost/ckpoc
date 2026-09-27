@@ -138,9 +138,14 @@ local function onUrnPlacedDone(data)
     data.urn:remove()
 
     local vars = world.mwscript.getGlobalVariables(data.player)
+    vars[const.HAS_URN_GVAR] = 0
+end
+
+--- this is set automatically once we hit the report success stage of the quest
+local function onDeliveryQuestCompleted(data)
+    local vars = world.mwscript.getGlobalVariables(data.player)
     vars[const.URNS_DELIVERED_GVAR] = vars[const.URNS_DELIVERED_GVAR] + 1
     vars[const.URN_DELIVERY_ACTIVE_GVAR] = 0
-    vars[const.HAS_URN_GVAR] = 0
 end
 
 ---@param data UrnEventData
@@ -163,6 +168,7 @@ return {
         [MOD_NAME .. "onUrnPlacedDone"] = onUrnPlacedDone,
         [MOD_NAME .. "onUrnDropped"] = onUrnDropped,
         [MOD_NAME .. "onUrnPickedUp"] = onUrnPickedUp,
+        [MOD_NAME .. "onDeliveryQuestCompleted"] = onDeliveryQuestCompleted,
     },
     engineHandlers = {
         onLoad = onLoad,

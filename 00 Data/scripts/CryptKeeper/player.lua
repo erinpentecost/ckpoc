@@ -48,6 +48,11 @@ local function updateActiveQuests()
                     metaData = allQuests[questId],
                     playerQuest = quest
                 }
+            elseif quest.stage == allQuests[questId].reportStage then
+                core.sendGlobalEvent(MOD_NAME .. "onDeliveryQuestCompleted", {
+                    player = pself.object,
+                    quest = allQuests[questId],
+                })
             end
         end
     end

@@ -28,7 +28,8 @@ URN_DELIVERY_ACTIVE_GVAR=1 AND HAS_URN_GVAR=0: "Was the internment successful?" 
        This could be done in a per-quest dialogue topic, but I'd like to avoid
        per-quest topics since there are probably going to be a ton.
     - "Goodbye." No side-effects.
-
+Urn quest stage is 50: "<custom success completion response for the quest>". Advance quest stage to 100 in the mwscript! There's one of these per delivery quest.
+Urn quest stage is 0: "<custom response for start of the quest>". Advance quest stage to 10 in the mwscript! There's one of these per delivery quest.
 ]]
 
 return {
