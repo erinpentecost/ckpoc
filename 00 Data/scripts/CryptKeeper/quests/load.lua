@@ -32,8 +32,7 @@ local collection = require("scripts.CryptKeeper.collection")
 ---@field placeCompleteStage number the post-placement success stage. this means they left the urn in the tomb. default 50. this should be an empty journal entry
 ---@field reportStage number the post-reported success stage. end stage. default 100.
 ---@field lostStage number if the player gives up or sells the urn. end stage. default 200.
----@field order number quest order. unique to startCell
----@field startCell string
+---@field startCell string not used by anything really
 ---@field destCell string
 ---@field urnName string
 
