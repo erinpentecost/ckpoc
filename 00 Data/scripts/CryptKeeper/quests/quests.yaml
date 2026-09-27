@@ -1,0 +1,48 @@
+# the urn is generated dynamically. gotta use the name of it to find it
+# testing hints:
+#     Journal ck_balmora_samarys 10
+#     GetJournalIndex ck_balmora_samarys
+
+# Balmora can be West Gash tombs and Bitter Coast tombs:
+# https://en.uesp.net/wiki/Morrowind:West_Gash
+# https://en.uesp.net/wiki/Morrowind:Bitter_Coast
+quests:
+  - id: "ck_balmora_samarys"
+    # https://en.uesp.net/wiki/Morrowind:Samarys_Ancestral_Tomb - undead guardians
+    order: 1
+    startCell: "Balmora, Temple"
+    destCell: "Samarys Ancestral Tomb"
+    urnName: "Remains of Marvisia Samarys"
+    rewards:
+      - id: gold_001
+        count: 100
+  - id: "ck_balmora_heran"
+    disable: true
+    # https://en.uesp.net/wiki/Morrowind:Heran_Ancestral_Tomb - looted, loose daedra!
+    order: 2
+    startCell: "Balmora, Temple"
+    destCell: "Heran Ancestral Tomb"
+    urnName: "Remains of Joveth Heran"
+    rewards:
+      - id: gold_001
+        count: 100
+  - id: "ck_balmora_norvayn"
+    disable: true
+    # https://en.uesp.net/wiki/Morrowind:Norvayn_Ancestral_Tomb - undead guardians
+    order: 3
+    startCell: "Balmora, Temple"
+    destCell: "Norvayn Ancestral Tomb"
+    urnName: "Remains of Rilvas Norvayn"
+    rewards:
+      - id: gold_001
+        count: 100
+  - id: "ck_balmora_andrethi"
+    disable: true
+    # "https://en.uesp.net/wiki/Morrowind:Andrethi_Ancestral_Tomb - vampires!
+    order: 4
+    startCell: "Balmora, Temple"
+    destCell: ""
+    urnName: "Remains of Bylen Andrethi"
+    rewards:
+      - id: gold_001
+        count: 100

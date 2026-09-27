@@ -1,0 +1,7 @@
+MENU: scripts/CryptKeeper/settings/menu_settings.lua
+GLOBAL: scripts/CryptKeeper/settings/global_settings.lua
+
+LOAD: scripts/CryptKeeper/content.lua
+PLAYER: scripts/CryptKeeper/player.lua
+GLOBAL: scripts/CryptKeeper/global.lua
+CUSTOM: scripts/CryptKeeper/urn.lua
