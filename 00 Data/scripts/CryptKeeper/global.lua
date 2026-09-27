@@ -99,7 +99,8 @@ local function onQuestStart(data)
         recordInstance:addScript(urnItemScriptPath, {
             quest = data.quest,
             itemRecordId = itemRecordID,
-            containerRecordId = containerRecordID
+            containerRecordId = containerRecordID,
+            player = data.player
         })
     end
     recordInstance:moveInto(data.player)

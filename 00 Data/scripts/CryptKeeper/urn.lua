@@ -37,6 +37,8 @@ local persist    = {
     itemRecordId = nil,
     ---@type string?
     containerRecordId = nil,
+    ---@type table?
+    player = nil,
 }
 
 ---@class UrnEventData : UrnItemData
@@ -65,35 +67,16 @@ local function onSave()
     return persist
 end
 
---- TODO not good because it doesn't check all players in the cell
-local function getClosestPlayer()
-    local closestPlayer
-    local closestDistanceSquared = math.huge
-
-    for _, player in ipairs(nearby.players) do
-        local d2 = (player.position - pself.object.position):length2()
-        if d2 < closestDistanceSquared then
-            closestPlayer = player
-            closestDistanceSquared = d2
-        end
-    end
-
-    return closestPlayer
-end
-
-local player = nil
-local cell = nil
-
 --- this happens when the urn is placed down in the world.
 local function onActive()
     print("Urn onActive triggered. persist data: " .. aux_util.deepToString(persist, 3))
     --- if we are in destcell, we can increment the quest stage..
     --- but I don't want them to pick it up, afteward.
     --- but I DO want them to be able to move it around after if they have OCD
-    player = getClosestPlayer()
-    cell = pself.cell
+    --player = getClosestPlayer()
+    local cell = pself.cell
 
-    if player == nil then
+    if persist.player == nil then
         error("no player for urn")
         return
     end
@@ -107,7 +90,7 @@ local function onActive()
         quest = persist.quest,
         urn = pself.object,
         cell = cell.id,
-        player = player,
+        player = persist.player,
         itemRecordId = persist.itemRecordId,
         containerRecordId = persist.containerRecordId
     }
@@ -115,7 +98,7 @@ local function onActive()
     if cell.id == persist.quest.destCell then
         --- yay, the player put the urn in the right cell.
         --- this triggers a journal update
-        player:sendEvent(MOD_NAME .. "onUrnPlacedStart", payload)
+        persist.player:sendEvent(MOD_NAME .. "onUrnPlacedStart", payload)
     end
 end
 
