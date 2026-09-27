@@ -1,3 +1,5 @@
+## Slop overview from conversation
+
 **Project Concept:** A Tribunal Temple-focused Morrowind mod centered on delivering and interning ancestral remains at ancestral tombs across Morrowind, with gameplay mechanics built around physical transport challenges and optional illicit alternative routes.
 
 ### Key Gameplay Mechanics
@@ -17,6 +19,16 @@
 ### Alternate/Illicit Paths
 
 * **Faction Cross-Over:** Special illicit options become available if the player holds dual membership in both the Temple and the Narsis syndicate, allowing them to redirect urn deliveries directly to cartel HQ.
+
+## Writing Notes
+
+- Dunmer that don't have a family tomb get mostly buried in Necrom. A portion of them is interred in the local temple for visiting families and another portion goes to the Ghostfence.
+- Dunmer that have a family tomb get buried in them. A portion goes to the Ghostfence, unless the family donates a sufficient amount to the Temple.
+- Pre-end-of-main-quest, the Temple dedicates a portion of most remains to the Ghostfence.
+- This means the Temple strictly controls the processing of Dunmer remains.
+- Post-main-quest, there could be a massive undertaking to dismantle the Ghostfence and restore as many of the identifiable remains as possible to their family tombs.
+- Pre-main-quest, Feldrelo Sadri might need many remains removed from the Balmora Temple because of pending renovation?
+- Maybe the dedication of remains to the Ghostfence was not in perpetuity, and due to a recent court ruling, the oldest remains must be relocated to their respective tombs. This means temples everywhere will have a ton of urns to move out. *i like this one*
 
 ## Blessed Lore Notes
 
