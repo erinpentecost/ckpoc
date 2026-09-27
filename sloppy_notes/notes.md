@@ -28,7 +28,7 @@
 - This means the Temple strictly controls the processing of Dunmer remains.
 - Post-main-quest, there could be a massive undertaking to dismantle the Ghostfence and restore as many of the identifiable remains as possible to their family tombs.
 - Pre-main-quest, Feldrelo Sadri might need many remains removed from the Balmora Temple because of pending renovation?
-- Maybe the dedication of remains to the Ghostfence was not in perpetuity, and due to a recent court ruling, the oldest remains must be relocated to their respective tombs. This means temples everywhere will have a ton of urns to move out. *i like this one. it's crazy disruptive*
+- Maybe the dedication of remains to the Ghostfence was not in perpetuity, and due to a recent court ruling, the oldest remains must be relocated to their respective tombs. This means temples everywhere will have a ton of urns to move out. *i like this one. it's crazy disruptive* Maybe just limit it to -new- burials, owing to the difficulty of sifting existing remains.
 
 ## Blessed Lore Notes
 
