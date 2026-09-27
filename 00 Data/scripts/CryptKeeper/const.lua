@@ -16,7 +16,26 @@ You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ]]
 
+
+--[[
+Prioritized TOPIC_ASH_INTERMENT dialogue responses:
+
+URN_DELIVERY_ACTIVE_GVAR=1 AND HAS_URN_GVAR=1:
+    - "Deliver your charge to their final resting place." No side-effects.
+URN_DELIVERY_ACTIVE_GVAR=1 AND HAS_URN_GVAR=0: "Was the internment successful?" Choice of responding:
+    - "I lost the remains." This should have an attached result mwscript that contains the string "CK_LOST_URN".
+       This will notify the lua that the active quest should be killed.
+       This could be done in a per-quest dialogue topic, but I'd like to avoid
+       per-quest topics since there are probably going to be a ton.
+    - "Goodbye." No side-effects.
+
+]]
+
 return {
+    --- this is searched for in mwscript to cancel the current quest
+    MWS_LOST_URN_TOKEN = "CK_LOST_URN",
+    --- topic to get interment quests
+    TOPIC_ASH_INTERMENT = "ash interment",
     --- count of total urns lost
     URNS_LOST_GVAR = "x32_CS_UrnsLost",
     --- count of total urns delivered

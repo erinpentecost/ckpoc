@@ -23,7 +23,8 @@ local nearby = require('openmw.nearby')
 local MOD_NAME              = require("scripts.CryptKeeper.ns")
 local interfaces = require('openmw.interfaces')
 local settings   = require("scripts.CryptKeeper.settings.settings")
-local allQuests  = require("scripts.CryptKeeper.quests.load")
+local allQuests             = require("scripts.CryptKeeper.quests.load")
+local const  = require("scripts.CryptKeeper.const")
 local aux_util = require('openmw_aux.util')
 
 ---optionally use this if available
@@ -186,10 +187,6 @@ local function UiModeChanged(data)
     end
 end
 
-local function getRecord(entity)
-    return entity.type.records[entity.recordId]
-end
-
 local function nearbyActiveUrn()
     for questID, _ in pairs(activeQuests) do
         if latestPlacedUrns[questID] then
@@ -278,11 +275,48 @@ local function onUrnInfo(data)
 	questsToRecords = data
 end
 
+---@class DialogueResponseData
+---@field actor table
+---@field type string
+---@field recordId string
+---@field infoId string DialogueRecordInfo id
+
+---@param data DialogueResponseData
+local function onQuestFailed(data)
+    settings.debugPrint("onQuestFailed")
+    for _, quest in pairs(activeQuests) do
+        quest.playerQuest:addJournalEntry(quest.metaData.lostStage, pself)
+    end
+end
+
+---@param data DialogueResponseData
+local function DialogueResponse(data)
+    if data.type ~= "topic" then
+        return
+    end
+
+    local topic = core.dialogue[data.type].records[data.recordId]
+
+    if topic.id:lower() ~= const.TOPIC_ASH_INTERMENT:lower() then
+        return
+    end
+
+    for _, info in pairs(topic.infos) do
+        if info.id == data.infoId then
+            if info.resultScript:find(const.MWS_LOST_URN_TOKEN, 1, true) then
+                onQuestFailed(data)
+            end
+            return
+        end
+    end
+end
+
 return {
     eventHandlers = {
         UiModeChanged = UiModeChanged,
         [MOD_NAME .. "onUrnPlacedStart"] = onUrnPlacedStart,
         [MOD_NAME .. "onUrnInfo"] = onUrnInfo,
+        DialogueResponse = DialogueResponse,
     },
     engineHandlers = {
         onActive = onActive,
