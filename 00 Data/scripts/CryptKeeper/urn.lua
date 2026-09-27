@@ -83,8 +83,8 @@ end
 local player = nil
 local cell = nil
 
+--- this happens when the urn is placed down in the world.
 local function onActive()
-    --- this happens when the urn is placed down.
     print("Urn onActive triggered. persist data: " .. aux_util.deepToString(persist, 3))
     --- if we are in destcell, we can increment the quest stage..
     --- but I don't want them to pick it up, afteward.
@@ -101,55 +101,20 @@ local function onActive()
         return
     end
 
+    ---@type UrnEventData
+    local payload = {
+        quest = persist.quest,
+        urn = pself.object,
+        cell = cell.id,
+        player = player,
+        itemRecordId = persist.itemRecordId,
+        containerRecordId = persist.containerRecordId
+    }
+
     if cell.id == persist.quest.destCell then
-        --- yay, the player put the urn in the right cell
-
-        ---@type UrnEventData
-        local payload = {
-            quest = persist.quest,
-            urn = pself.object,
-            cell = cell.id,
-            player = player,
-            itemRecordId = persist.itemRecordId,
-            containerRecordId = persist.containerRecordId
-        }
-
+        --- yay, the player put the urn in the right cell.
+        --- this triggers a journal update
         player:sendEvent(MOD_NAME .. "onUrnPlacedStart", payload)
-        --core.sendGlobalEvent(MOD_NAME .. "onUrnPlacedStart", payload)
-    end
-end
-
---- this happens when the urn goes back into the player's inventory, too!
---- not just when unloaded from the world.
-local function onInactive()
-    print("onInactive")
-    if player == nil then
-        error("no player for urn")
-        return
-    end
-    if cell == nil then
-        error("no cell for urn")
-        return
-    end
-
-    if pself.count == 0 then
-        print("stack of 0")
-        return
-    end
-
-    if player.cell:isInSameSpace(pself.object) then
-        print("same world space")
-        return
-    end
-
-    if cell and player and (cell.id == persist.quest.destCell) then
-        --- ok, player is happy with the location.
-        player:sendEvent(MOD_NAME .. "onUrnPlacedDone", { quest = persist.quest })
-        core.sendGlobalEvent(MOD_NAME .. "onUrnPlacedDone", {
-            quest = persist.quest,
-            urn = pself.object,
-            cell = cell.id,
-        })
     end
 end
 

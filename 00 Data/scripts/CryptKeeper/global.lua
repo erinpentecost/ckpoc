@@ -27,6 +27,23 @@ local settings = require("scripts.CryptKeeper.settings.settings")
 local interfaces = require('openmw.interfaces')
 local vfs = require('openmw.vfs')
 
+
+---@class Persisted
+---@field urnRecords {[string]:UrnItemData}
+
+---@type Persisted
+local persist = {
+    urnRecords = {},
+}
+local function onLoad(data)
+    if data then
+        persist = data
+    end
+end
+local function onSave()
+    return persist
+end
+
 --- sometimes meshes/o/xcontain_urn_05.nif, but contain_urn_05.nif exists too
 local urnMeshPath = "meshes/o/contain_urn_04.nif"
 if vfs.fileExists("meshes/o/xcontain_urn_04.nif") then
@@ -69,7 +86,7 @@ local function onQuestStart(data)
     local containerRecord = world.createRecord(containerRecordDraft)
 
     local recordInstance = world.createObject(itemRecord.id, 1)
-    settings.debugPrint("made new urn record ("..tostring(itemRecord.id)..") - "..data.quest.urnName)
+    settings.debugPrint("made new urn record (" .. tostring(itemRecord.id) .. ") - " .. data.quest.urnName)
     if not recordInstance:hasScript(urnItemScriptPath) then
         recordInstance:addScript(urnItemScriptPath, {
             quest = data.quest,
@@ -78,12 +95,31 @@ local function onQuestStart(data)
         })
     end
     recordInstance:moveInto(data.player)
-    --- TODO: send event to player so we can start "holding" the urn
+
+    local vars = world.mwscript.getGlobalVariables(data.player)
+    vars[const.URN_DELIVERY_ACTIVE_GVAR] = 1
+    vars[const.HAS_URN_GVAR] = 1
+    --- send event to player so we can start "holding" the urn
+    ---@type UrnItemData
+    local payload = {
+        quest = data.quest,
+        --urn = recordInstance,
+        --cell = data.player.cell.id,
+        --player = data.player,
+        itemRecordId = itemRecord.id,
+        containerRecordId = containerRecord.id
+    }
+    persist.urnRecords[data.quest.id] = payload
+    data.player:sendEvent(MOD_NAME .. "onUrnInfo", persist.urnRecords)
+end
+
+local function onPlayerAdded(player)
+    player:sendEvent(MOD_NAME .. "onUrnInfo", persist.urnRecords)
 end
 
 ---@param data UrnEventData
 local function onUrnPlacedDone(data)
-    settings.debugPrint("placed urn "..data.quest.id)
+    settings.debugPrint("placed urn " .. data.quest.id)
     --- replace item with container
 
     local recordInstance = world.createObject(data.containerRecordId, 1)
@@ -91,11 +127,37 @@ local function onUrnPlacedDone(data)
         rotation = data.urn.rotation
     })
     data.urn:remove()
+
+    local vars = world.mwscript.getGlobalVariables(data.player)
+    vars[const.URNS_DELIVERED_GVAR] = vars[const.URNS_DELIVERED_GVAR] + 1
+    vars[const.URN_DELIVERY_ACTIVE_GVAR] = 0
+    vars[const.HAS_URN_GVAR] = 0
+end
+
+---@param data UrnEventData
+local function onUrnDropped(data)
+    settings.debugPrint("urn dropped")
+    local vars = world.mwscript.getGlobalVariables(data.player)
+    vars[const.HAS_URN_GVAR] = 0
+end
+
+---@param data UrnEventData
+local function onUrnPickedUp(data)
+    settings.debugPrint("urn picked up")
+    local vars = world.mwscript.getGlobalVariables(data.player)
+    vars[const.HAS_URN_GVAR] = 1
 end
 
 return {
     eventHandlers = {
         [MOD_NAME .. "onQuestStart"] = onQuestStart,
         [MOD_NAME .. "onUrnPlacedDone"] = onUrnPlacedDone,
+        [MOD_NAME .. "onUrnDropped"] = onUrnDropped,
+        [MOD_NAME .. "onUrnPickedUp"] = onUrnPickedUp,
+    },
+    engineHandlers = {
+        onLoad = onLoad,
+        onSave = onSave,
+        onPlayerAdded = onPlayerAdded,
     },
 }

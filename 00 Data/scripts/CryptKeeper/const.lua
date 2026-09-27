@@ -21,4 +21,8 @@ return {
     URNS_LOST_GVAR = "x32_CS_UrnsLost",
     --- count of total urns delivered
     URNS_DELIVERED_GVAR = "x32_CS_UrnsDelivered",
+    --- 1 if the player is carrying an urn right now
+    HAS_URN_GVAR = "x32_CS_UrnCarried",
+    --- 1 if the player has an urn delivery quest active
+    URN_DELIVERY_ACTIVE_GVAR = "x32_CS_UrnDeliveryActive",
 }

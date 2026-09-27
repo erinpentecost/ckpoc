@@ -106,8 +106,12 @@ local function getEnemies()
     return enemies
 end
 
+---@type {[string]:UrnItemData}
+local questsToRecords = {}
+
+---this is only updated after placement of an urn
 ---@type {[string]:UrnEventData}
-local latestUrnData = {}
+local latestPlacedUrns = {}
 local currentQuestID = nil
 local insideDestCell = false
 local enemiesInCurrentDestCell = {}
@@ -131,15 +135,15 @@ local function onCellLoaded()
             end
             enemiesInCurrentDestCell = getEnemies()
             settings.debugPrint("Enemies in current cell: " .. tostring(#enemiesInCurrentDestCell))
-        elseif (quest.metaData.destCell == lastCell) and (quest.playerQuest.stage == quest.metaData.placeStage) and latestUrnData[quest.metaData.id] then
+        elseif (quest.metaData.destCell == lastCell) and (quest.playerQuest.stage == quest.metaData.placeStage) and latestPlacedUrns[quest.metaData.id] then
             --- we just left the destination cell, and we previously placed the urn.
             --- if we don't have the urn in our inventory, then we'll advance quest stage
             --- and swap the urn with a container
             local inventory = types.Actor.inventory(pself)
-            if inventory:countOf(latestUrnData[quest.metaData.id].itemRecordId) == 0 then
+            if inventory:countOf(latestPlacedUrns[quest.metaData.id].itemRecordId) == 0 then
                 settings.debugPrint("locking in urn placement")
                 quest.playerQuest:addJournalEntry(quest.metaData.placeCompleteStage, pself)
-                core.sendGlobalEvent(MOD_NAME .. "onUrnPlacedDone", latestUrnData[quest.metaData.id])
+                core.sendGlobalEvent(MOD_NAME .. "onUrnPlacedDone", latestPlacedUrns[quest.metaData.id])
             end
         end
     end
@@ -151,6 +155,35 @@ end
 local function onActive()
     onCellLoaded()
     updateActiveQuests()
+end
+
+local inventory = types.Actor.inventory(pself)
+local hasUrn = nil
+local function handleUrnStatus()
+    local totalUrns = 0
+    for _, quest in pairs(activeQuests) do
+        if questsToRecords[quest.metaData.id] then
+            totalUrns = totalUrns + inventory:countOf(questsToRecords[quest.metaData.id].itemRecordId)
+        end
+    end
+    if (hasUrn == nil) or ((totalUrns > 0) ~= hasUrn) then
+        if totalUrns > 0 then
+            pself:sendEvent(MOD_NAME .. "onUrnPickedUp", nil)
+            core.sendGlobalEvent(MOD_NAME .. "onUrnPickedUp", { player = pself })
+            hasUrn = true
+        else
+            pself:sendEvent(MOD_NAME .. "onUrnDropped", nil)
+            core.sendGlobalEvent(MOD_NAME .. "onUrnDropped", { player = pself })
+            hasUrn = false
+        end
+    end
+end
+
+local function UiModeChanged(data)
+    --- check urn status on ui change too so it's more snappy
+    if (data.newMode ~= data.oldMode) then
+        handleUrnStatus()
+    end
 end
 
 local jitterSeed = 0
@@ -190,11 +223,13 @@ local function onUpdate(dt)
             end
         end
     end
+
+    handleUrnStatus()
 end
 
 ---@param data UrnEventData
 local function onUrnPlacedStart(data)
-    settings.debugPrint("started placing urn "..data.quest.id)
+    settings.debugPrint("started placing urn " .. data.quest.id)
     --- this is just here to notify the player that once they leave,
     --- the quest will be a success.
     local quest = activeQuests[data.quest.id]
@@ -202,7 +237,7 @@ local function onUrnPlacedStart(data)
         error("placed urn " .. data.quest.id .. ", but the quest is inactive??")
         return
     end
-    latestUrnData[data.quest.id] = data
+    latestPlacedUrns[data.quest.id] = data
     local clearedOut = false
     if quest.metaData.destCellClearedStage ~= nil then
         clearedOut = quest.playerQuest.stage == quest.metaData.destCellClearedStage
@@ -217,32 +252,19 @@ local function onUrnPlacedStart(data)
     end
 end
 
-local function onUrnPlacedDoneTHISISNOTGONNAWORK(data)
-    settings.debugPrint("finished placing urn "..data.quest.id)
-    --- this means the player left, and the urn is in the tomb without them.
-    local quest = activeQuests[data.quest.id]
-    if quest == nil then
-        error("placed urn done " .. data.quest.id .. ", but the quest is inactive??")
-        return
+---@param data {[string]:UrnItemData}
+local function onUrnInfo(data)
+    if data == nil then
+        error("onUrnInfo: bad data")
     end
-    local clearedOut = false
-    if quest.metaData.destCellClearedStage ~= nil then
-        clearedOut = quest.playerQuest.stage == quest.metaData.destCellClearedStage
-        if not clearedOut then
-            settings.debugPrint("skipped journal update; enemies present")
-        end
-    else
-        clearedOut = quest.playerQuest.stage < quest.metaData.placeCompleteStage
-    end
-    if clearedOut then
-        quest.playerQuest:addJournalEntry(quest.metaData.placeCompleteStage, pself)
-    end
+	questsToRecords = data
 end
 
 return {
     eventHandlers = {
+        UiModeChanged = UiModeChanged,
         [MOD_NAME .. "onUrnPlacedStart"] = onUrnPlacedStart,
-        [MOD_NAME .. "onUrnPlacedDone"] = onUrnPlacedDone,
+        [MOD_NAME .. "onUrnInfo"] = onUrnInfo,
     },
     engineHandlers = {
         onActive = onActive,
