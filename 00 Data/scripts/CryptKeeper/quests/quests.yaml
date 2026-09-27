@@ -3,9 +3,11 @@
 #     Journal ck_balmora_samarys 10
 #     GetJournalIndex ck_balmora_samarys
 
-# Balmora can be West Gash tombs and Bitter Coast tombs:
-# https://en.uesp.net/wiki/Morrowind:West_Gash
-# https://en.uesp.net/wiki/Morrowind:Bitter_Coast
+# Balmora Quests!
+# Can be West Gash tombs and Bitter Coast tombs:
+# - https://en.uesp.net/wiki/Morrowind:West_Gash
+# - https://en.uesp.net/wiki/Morrowind:Bitter_Coast
+# "feldrelo sadri" can give the quests out. she doesn't have any vanilla quests.
 quests:
   - id: "ck_balmora_samarys"
     # https://en.uesp.net/wiki/Morrowind:Samarys_Ancestral_Tomb - undead guardians

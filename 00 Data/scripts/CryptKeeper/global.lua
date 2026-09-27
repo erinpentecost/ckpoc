@@ -141,7 +141,7 @@ local function onUrnPlacedDone(data)
     vars[const.HAS_URN_GVAR] = 0
 end
 
---- this is set automatically once we hit the report success stage of the quest
+--- this is set automatically once we hit the report end stage (good or bad) of the quest
 local function onDeliveryQuestCompleted(data)
     local vars = world.mwscript.getGlobalVariables(data.player)
     vars[const.URNS_DELIVERED_GVAR] = vars[const.URNS_DELIVERED_GVAR] + 1

@@ -57,8 +57,8 @@ local function updateActiveQuests()
                     metaData = allQuests[questId],
                     playerQuest = quest
                 }
-            elseif quest.stage == allQuests[questId].reportStage then
-                onQuestCompleted(quest)
+            elseif (quest.stage == allQuests[questId].reportStage) or (quest.stage == allQuests[questId].lostStage) then
+                onQuestCompleted(allQuests[questId])
             end
         end
     end
@@ -295,7 +295,7 @@ end
 
 ---@param data DialogueResponseData
 local function onQuestFailed(data)
-    settings.debugPrint("onQuestFailed")
+    settings.debugPrint("onQuestFailed" .. aux_util.deepToString(data, 5))
     for _, quest in pairs(activeQuests) do
         quest.playerQuest:addJournalEntry(quest.metaData.lostStage, pself)
     end
@@ -315,6 +315,7 @@ local function DialogueResponse(data)
 
     for _, info in pairs(topic.infos) do
         if (info.id == data.infoId) and info.resultScript then
+            --print(info.resultScript)
             if info.resultScript:find(const.MWS_LOST_URN_TOKEN, 1, true) then
                 onQuestFailed(data)
             end
