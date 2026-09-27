@@ -22,10 +22,6 @@ local core   = require('openmw.core')
 local settings = require("scripts.CryptKeeper.settings.settings")
 local collection = require("scripts.CryptKeeper.collection")
 
----@class Reward
----@field id string
----@field count number
-
 ---@class Quest
 ---@field id string this is the journal topic id
 ---@field disable boolean? if true, don't load it
@@ -39,7 +35,6 @@ local collection = require("scripts.CryptKeeper.collection")
 ---@field order number quest order. unique to startCell
 ---@field startCell string
 ---@field destCell string
----@field rewards Reward[]
 ---@field urnName string
 
 ---@type {[string]: Quest}

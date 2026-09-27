@@ -65,6 +65,7 @@ local function onSave()
     return persist
 end
 
+--- TODO not good because it doesn't check all players in the cell
 local function getClosestPlayer()
     local closestPlayer
     local closestDistanceSquared = math.huge

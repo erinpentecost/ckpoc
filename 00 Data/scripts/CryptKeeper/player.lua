@@ -81,7 +81,7 @@ local function isBandit(actor)
     -- chargen boat guard has 70!
     -- bandits have 90 and 0 disposition
     local fightStat = types.Actor.stats.ai.fight(actor).base
-    if types.Creature.objectIsInstance(actor) then
+    if types.NPC.objectIsInstance(actor) then
         local startDisposition = types.NPC.getBaseDisposition(actor, pself)
         if fightStat >= 90 and startDisposition <= 40 then
             return true
@@ -100,7 +100,7 @@ local function getEnemies()
     local enemies = {}
     for _, actor in ipairs(nearby.actors) do
         if actor:isValid() and not types.Actor.isDead(actor) and not followers[actor.id] and not isUndead(actor) and isBandit(actor) then
-            table.insert(actor)
+            table.insert(enemies, actor)
         end
     end
     return enemies
@@ -190,6 +190,7 @@ local function getRecord(entity)
     return entity.type.records[entity.recordId]
 end
 
+--- TODO this is useless because it's nto all the urns in the current cell
 local function nearbyActiveUrn()
     local urnItemRecords = {}
     for _, quest in pairs(activeQuests) do
@@ -239,7 +240,7 @@ local function onUpdate(dt)
     --- check if we killed all the enemies
     local quest = activeQuests[currentQuestID]
     if insideDestCell and quest.metaData.destCellClearedStage ~= nil then
-        if quest.playerQuest.stage < quest.destCellClearedStage then
+        if quest.playerQuest.stage < quest.metaData.destCellClearedStage then
             enemiesInCurrentDestCell = getEnemies()
             if #enemiesInCurrentDestCell == 0 then
                 --- yay we did it

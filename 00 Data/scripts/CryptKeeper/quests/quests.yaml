@@ -13,9 +13,6 @@ quests:
     startCell: "Balmora, Temple"
     destCell: "Samarys Ancestral Tomb"
     urnName: "Remains of Marvisia Samarys"
-    rewards:
-      - id: gold_001
-        count: 100
   - id: "ck_balmora_heran"
     # https://en.uesp.net/wiki/Morrowind:Heran_Ancestral_Tomb - looted, loose daedra!
     order: 2
@@ -24,9 +21,6 @@ quests:
     urnName: "Remains of Joveth Heran"
     destCellEnterStage: 39
     destCellClearedStage: 40
-    rewards:
-      - id: gold_001
-        count: 100
   - id: "ck_balmora_norvayn"
     disable: true
     # https://en.uesp.net/wiki/Morrowind:Norvayn_Ancestral_Tomb - undead guardians
@@ -34,9 +28,6 @@ quests:
     startCell: "Balmora, Temple"
     destCell: "Norvayn Ancestral Tomb"
     urnName: "Remains of Rilvas Norvayn"
-    rewards:
-      - id: gold_001
-        count: 100
   - id: "ck_balmora_andrethi"
     disable: true
     # "https://en.uesp.net/wiki/Morrowind:Andrethi_Ancestral_Tomb - vampires!
@@ -44,6 +35,3 @@ quests:
     startCell: "Balmora, Temple"
     destCell: ""
     urnName: "Remains of Bylen Andrethi"
-    rewards:
-      - id: gold_001
-        count: 100
