@@ -1,6 +1,6 @@
 # THE EDICT OF EXHUMATION
 
-**An Imperial Judicial Decree and Commission Mandate issued by the Imperial Commission of Old Ebonheart, Third Era, Year 421.**
+**An Imperial Judicial Decree and Commission Mandate issued by the Imperial Commission of Old Ebonheart, Third Era, Year 426.**
 
 ---
 
@@ -18,13 +18,11 @@ No person interred before 3E 414 shall be deemed a member of the Class Claimants
 
 Upon exhaustive review of pre-Imperial treaties, the structural codicils of the Armistice, and the subsequent Imperial statutes governing Vvardenfell as a Provincial District, this Court finds that the Tribunal Temple has systematically committed **Massive Breach of Testamentary Contract and Retrospective Asset Seizure** across the district territories.
 
-While Section III of the Armistice strictly protects the traditional practice of Dunmer Ancestor Worship, the creation of the Great Ghostfence circa 3E 400 constitutes an unprecedented state utility. The Court does not herein adjudicate the legality of every ancestral conscription undertaken during the original establishment of the Ghostfence.
+While Section III of the Armistice strictly protects the traditional practice of Dunmer Ancestor Worship, the creation of the Great Ghostfence constitutes an unprecedented state utility. The Court does not herein adjudicate the legality of every ancestral conscription undertaken during the original establishment of the Ghostfence.
 
 Rather, this action concerns the **subsequent exhumation and removal of the dead after the reorganization of Vvardenfell as an Imperial Provincial District in 3E 414**.
 
 Following that reorganization, the Temple continued to exhume, relocate, conscript, and repurpose the physical remains and spirits of Dunmer citizens from established ancestral tombs without the explicit, written consent of their surviving familial proprietors. Such acts, when performed on or after 3E 414, constitute an unlawful interference with posthumous property rights protected under Imperial statutory law.
-
-Furthermore, by stripping local Ancestral Tombs of their legally sanctioned guardian spirits to maintain, reinforce, or service the outer Rim-Fence, the Temple has left private estates defenseless, causing substantial depreciation of land value and contributing to the subsequent disturbance and profanation of private graves.
 
 The Court therefore distinguishes between the **original establishment of the Ghostfence** and the **later exhumations that form the subject of this action**. The former is not retroactively invalidated by this decree. The latter, where performed upon or after 3E 414 without lawful familial authorization, is hereby adjudged an actionable deprivation of ancestral property.
 
@@ -36,7 +34,7 @@ THEREFORE, IT IS HEREBY ORDERED AND DECREED:
 
 * **CEASE AND DESIST ORDER:** The Archcanonry and its subordinate Temples must immediately cease the extraction, conscription, or maintenance of ancestral spirits belonging to the Class Claimants for the purpose of powering, reinforcing, maintaining, or otherwise servicing the Red Mountain containment barrier.
 
-* **MANDATORY SPIRITUAL DECOUPLING:** The Keepers of the Dead at Necrom and the Master Waking Guides assigned to the Ghostgate machinery are legally compelled to systematically untangle, separate, and isolate the distinct ancestral ash-vibrations of the **forty-two thousand verified Class Claimants** currently bound to the barrier or otherwise retained for its service.
+* **MANDATORY SPIRITUAL DECOUPLING:** The Keepers of the Dead at Necrom and the Master Waking Guides assigned to the Ghostgate machinery are legally compelled to systematically untangle, separate, and isolate the distinct ancestral remains of the **forty-two thousand verified Class Claimants** currently bound to the barrier or otherwise retained for its service.
 
 * **LIMITATION OF CLAIM:** Nothing in this decree shall be construed as declaring unlawful the original establishment of the Ghostfence, nor shall it constitute an order for the disinterment of those whose remains were lawfully incorporated into the barrier before 3E 414. This decree concerns the unauthorized **post-3E 414 exhumation and retention** of ancestral remains.
 
@@ -46,9 +44,9 @@ The Tribunal Temple is granted a period of no more than two winters to execute t
 
 ### The Ash Caravans
 
-All decoupled remains must be placed into sanctified, lead-lined urns, verified by an appointed Imperial Magistrate and a Guild Barrister, and escorted via Temple caravan back to the ancestral plots from which they were exhumed, at the Temple's sole expense.
+All decoupled remains must be placed into sanctified, lead-lined urns, verified by an appointed Imperial Magistrate and a Guild Barrister, and escorted via Temple agents back to the ancestral plots from which they were exhumed, at the Temple's sole expense.
 
-Where the original place of interment has been destroyed, rendered inaccessible, or otherwise lost, the remains shall be conveyed to the nearest surviving familial tomb or other site designated by the lawful blood descendants and approved by the Imperial Magistrate.
+Where the original place of interment has been destroyed, rendered inaccessible, or otherwise lost, the remains shall be conveyed to the nearest local Temple site.
 
 ### The Right of Local Animation
 
