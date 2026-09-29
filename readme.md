@@ -12,5 +12,5 @@ This will keep `CryptKeeper_readonly.json` up-to-date. Don't edit this file dire
 
 ## Development Guides
 
-- Dialogue Editor: https://assumeru.gitlab.io/cs.js/
+- Dialogue Editor: https://www.nexusmods.com/morrowind/mods/58547
 - Dialogue Guide: https://wiki.project-tamriel.com/wiki/Writing_and_Dialogue_Guidelines#How_Dialogue_Works
