@@ -1,0 +1,12 @@
+# Ald'ruhn Quests!
+# Can be West Gash tombs and Bitter Coast tombs:
+# - https://en.uesp.net/wiki/Morrowind:West_Gash
+# - https://en.uesp.net/wiki/Morrowind:Bitter_Coast
+# "methal seran" can give the quests out. tuls valen handles the vanilla quests; we might need to redirect players to talk to methal seran if they ask about duties from tuls valen.
+quests:
+  - id: "ck_aldruhn_uveran"
+    # https://en.uesp.net/wiki/Morrowind:Uveran_Ancestral_Tomb - undead guardians, old redoran family
+    # directins:  it's along the coast between the Odai and Seyda Neen.
+    startCell: "Ald-ruhn, Temple"
+    destCell: "Uveran Ancestral Tomb"
+    urnName: "Remains of Staleva Uveran"

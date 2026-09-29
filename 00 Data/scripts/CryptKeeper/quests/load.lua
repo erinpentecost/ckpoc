@@ -55,76 +55,80 @@ local function load()
         return str:sub(- #suffix) == suffix
     end
 
+    ---@alias ErrMsg string
+
+    ---@param v Quest
+    ---@return Quest|ErrMsg
+    local function loadQuest(v)
+        local id = tostring(v.id or "unknown quest")
+        if v.disable then
+            return id..": disabled"
+        end
+        if v.startStage == nil then
+            v.startStage = 10
+        end
+        if v.placeStage == nil then
+            v.placeStage = 49
+        end
+        if v.placeCompleteStage == nil then
+            v.placeCompleteStage = 50
+        end
+        if v.reportStage == nil then
+            v.reportStage = 100
+        end
+        if v.lostStage == nil then
+            v.lostStage = 200
+        end
+        if (v.destCellEnterStage == nil) == (v.destCellClearedStage) then
+            return id..": destCellClearedStage and destCellEnterStage must both be set or unset, not mixed"
+        end
+        if v.destCellEnterStage and v.destCellEnterStage >= v.placeStage then
+            return id..": destCellEnterStage must be < placeStage"
+        end
+        if v.destCellClearedStage and v.destCellClearedStage >= v.placeStage  then
+            return id..": destCellClearedStage must be < placeStage"
+        end
+        v.id = v.id:lower()
+        v.destCell = v.destCell:lower()
+        v.startCell = v.startCell:lower()
+        local journalRecord = core.dialogue.journal.records[v.id]
+        if journalRecord == nil then
+            return id..":  no dialogue journal record with id " .. tostring(v.id)
+        end
+        if dialogueRecordInfoWithStage(journalRecord.infos, v.startStage) == nil then
+            return id..": missing start stage " .. tostring(v.startStage)
+        end
+        if dialogueRecordInfoWithStage(journalRecord.infos, v.placeStage) == nil then
+            return id..":  missing place stage " .. tostring(v.placeStage)
+        end
+        if dialogueRecordInfoWithStage(journalRecord.infos, v.placeCompleteStage) == nil then
+            return id..":  missing place complete stage " .. tostring(v.placeCompleteStage)
+        end
+        if dialogueRecordInfoWithStage(journalRecord.infos, v.reportStage) == nil then
+            return id..":  missing report stage " .. tostring(v.reportStage)
+        elseif not dialogueRecordInfoWithStage(journalRecord.infos, v.reportStage).isQuestFinished then
+            return id..":  report stage " .. tostring(v.reportStage).. " is not marked as QuestFinished"
+        end
+        if dialogueRecordInfoWithStage(journalRecord.infos, v.lostStage) == nil then
+            return id..":  missing lost stage " .. tostring(v.lostStage)
+        elseif not dialogueRecordInfoWithStage(journalRecord.infos, v.lostStage).isQuestFinished then
+            return id..":  lostStage stage " .. tostring(v.lostStage) .. " is not marked as QuestFinished"
+        end
+        return v
+    end
+
     local function loadFile(fileName)
         local result = markup.loadYaml(fileName)
         for _, v in ipairs(result.quests) do
             ---@cast v Quest
-            if v.disable ~= true then
-                if v.startStage == nil then
-                    v.startStage = 10
+            local parsed = loadQuest(v)
+            if parsed then
+                if type(parsed) == "string" then
+                    print("Quest load ERROR: " .. parsed)
+                else
+                    quests[v.id] = v
+                    count = count + 1
                 end
-                if v.placeStage == nil then
-                    v.placeStage = 49
-                end
-                if v.placeCompleteStage == nil then
-                    v.placeCompleteStage = 50
-                end
-                if v.reportStage == nil then
-                    v.reportStage = 100
-                end
-                if v.lostStage == nil then
-                    v.lostStage = 200
-                end
-                if (v.destCellEnterStage == nil) == (v.destCellClearedStage) then
-                    error("destCellClearedStage and destCellEnterStage must both be set or unset, not mixed")
-                    return
-                end
-                if v.destCellEnterStage and v.destCellEnterStage >= v.placeStage then
-                    error("destCellEnterStage must be < placeStage")
-                    return
-                end
-                if v.destCellClearedStage and v.destCellClearedStage >= v.placeStage  then
-                    error("destCellClearedStage must be < placeStage")
-                    return
-                end
-                v.id = v.id:lower()
-                v.destCell = v.destCell:lower()
-                v.startCell = v.startCell:lower()
-                local journalRecord = core.dialogue.journal.records[v.id]
-                if journalRecord == nil then
-                    error("no dialogue journal record with id " .. tostring(v.id))
-                    return
-                end
-                if dialogueRecordInfoWithStage(journalRecord.infos, v.startStage) == nil then
-                    error("journal " .. tostring(v.id) .. " missing start stage " .. tostring(v.startStage))
-                    return
-                end
-                if dialogueRecordInfoWithStage(journalRecord.infos, v.placeStage) == nil then
-                    error("journal " .. tostring(v.id) .. " missing place stage " .. tostring(v.placeStage))
-                    return
-                end
-                if dialogueRecordInfoWithStage(journalRecord.infos, v.placeCompleteStage) == nil then
-                    error("journal " .. tostring(v.id) .. " missing place complete stage " .. tostring(v.placeCompleteStage))
-                    return
-                end
-                if dialogueRecordInfoWithStage(journalRecord.infos, v.reportStage) == nil then
-                    error("journal " .. tostring(v.id) .. " missing report stage " .. tostring(v.reportStage))
-                    return
-                elseif not dialogueRecordInfoWithStage(journalRecord.infos, v.reportStage).isQuestFinished then
-                    error("journal " .. tostring(v.id) .. " report stage " .. tostring(v.reportStage).. " is not marked as QuestFinished")
-                    return
-                end
-                if dialogueRecordInfoWithStage(journalRecord.infos, v.lostStage) == nil then
-                    error("journal " .. tostring(v.id) .. " missing lost stage " .. tostring(v.lostStage))
-                    return
-                elseif not dialogueRecordInfoWithStage(journalRecord.infos, v.lostStage).isQuestFinished then
-                    error("journal " ..
-                    tostring(v.id) .. " lostStage stage " .. tostring(v.lostStage) .. " is not marked as QuestFinished")
-                    return
-                end
-
-                quests[v.id] = v
-                count = count + 1
             end
         end
     end
