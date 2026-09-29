@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Define your nested ESP path relative to the root directory
+# Edit this path if your ESP is located somewhere else
+ESP_PATH=$(git diff --cached --name-only | grep '\CryptKeeper.omwaddon$' | head -n 1)
+
+# If no staged ESP file changed, exit silently and allow commit
+if [ -z "$ESP_PATH" ]; then
+    exit 0
+fi
+
+echo "Detected staged changes to: $ESP_PATH"
+echo "Automatically updating root JSON configuration..."
+
+# Verify tes3conv is accessible
+if ! command -v tes3conv &> /dev/null; then
+    echo "Error: tes3conv could not be found in your PATH."
+    echo "Please download it or add it to your system variables."
+    exit 1
+fi
+
+# Convert the nested ESP to the root JSON file
+OUTPUT_JSON="CryptKeeper_readonly.json"
+
+if tes3conv "$ESP_PATH" "$OUTPUT_JSON"; then
+    echo "Successfully updated $OUTPUT_JSON"
+    # Stage the newly updated JSON file so it gets bundled into this exact commit
+    git add "$OUTPUT_JSON"
+    exit 0
+else
+    echo "Error: tes3conv failed to generate JSON from $ESP_PATH."
+    exit 1
+fi
