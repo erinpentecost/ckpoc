@@ -2,7 +2,7 @@
 
 # Define your nested ESP path relative to the root directory
 # Edit this path if your ESP is located somewhere else
-ESP_PATH=$(git diff --cached --name-only | grep '\CryptKeeper.omwaddon$' | head -n 1)
+ESP_PATH=$(git diff --cached --name-only | grep '\CryptKeeper.esp$' | head -n 1)
 
 # If no staged ESP file changed, exit silently and allow commit
 if [ -z "$ESP_PATH" ]; then
@@ -19,6 +19,13 @@ if ! command -v tes3conv &> /dev/null; then
     exit 1
 fi
 
+# Verify omwpacker is accessible
+if ! command -v omwpacker &> /dev/null; then
+    echo "Error: omwpacker could not be found in your PATH."
+    echo "Please download it or add it to your system variables."
+    exit 1
+fi
+
 # Convert the nested ESP to the root JSON file
 OUTPUT_JSON="CryptKeeper_readonly.json"
 
@@ -29,5 +36,15 @@ if tes3conv "$ESP_PATH" "$OUTPUT_JSON"; then
     exit 0
 else
     echo "Error: tes3conv failed to generate JSON from $ESP_PATH."
+    exit 1
+fi
+
+if omwpacker p "$ESP_PATH" -o "CryptKeeper.omwaddon"; then
+    echo "Successfully updated $OUTPUT_JSON"
+    # Stage the newly updated JSON file so it gets bundled into this exact commit
+    git add "$OUTPUT_JSON"
+    exit 0
+else
+    echo "Error: omwpacker failed to pack in script file."
     exit 1
 fi
