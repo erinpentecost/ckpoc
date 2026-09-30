@@ -164,6 +164,13 @@ local function onUrnPickedUp(data)
     vars[const.HAS_URN_GVAR] = 1
 end
 
+local function onSyncKeepersOfTheDeadFaction(data)
+    local vars = world.mwscript.getGlobalVariables(data.player)
+    vars[const.KOTD_RANK_GVAR] = data.rank
+    vars[const.KOTD_REPUTATION_GVAR] = data.reputation
+    vars[const.KOTD_EXPELLED_GVAR] = data.expelled
+end
+
 return {
     eventHandlers = {
         [MOD_NAME .. "onQuestStart"] = onQuestStart,
@@ -171,6 +178,7 @@ return {
         [MOD_NAME .. "onUrnDropped"] = onUrnDropped,
         [MOD_NAME .. "onUrnPickedUp"] = onUrnPickedUp,
         [MOD_NAME .. "onUrnLost"] = onUrnLost,
+        [MOD_NAME .. "onSyncKeepersOfTheDeadFaction"] = onSyncKeepersOfTheDeadFaction,
     },
     engineHandlers = {
         onLoad = onLoad,

@@ -50,6 +50,7 @@ return {
     --- 1 if the player has an urn delivery quest active
     URN_DELIVERY_ACTIVE_GVAR = "x32_CS_UrnDeliveryActive",
     KOTD_RANK_GVAR = "x32_CS_KeeperRank",
-    KOTD_REPUTATION = "x32_CS_KeeperReputation",
-    KOTD_EXPELLED = "x32_CS_KeeperExpelled",
+    KOTD_REPUTATION_GVAR = "x32_CS_KeeperReputation",
+    KOTD_EXPELLED_GVAR = "x32_CS_KeeperExpelled",
+    KOTD_NAME = "Keepers of the Dead"
 }

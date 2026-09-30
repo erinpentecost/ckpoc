@@ -3441,11 +3441,11 @@
         "index": 0,
         "filter_type": "Global",
         "function": "VariableCompare",
-        "comparison": "NotEqual",
+        "comparison": "Equal",
         "id": "x32_CS_KeeperExpelled",
         "value": {
           "type": "Integer",
-          "data": 0
+          "data": 1
         }
       }
     ],
@@ -3992,6 +3992,6 @@
     "sound_path": "",
     "text": "If you had better standing with the Temple, I'd talk with you about it.",
     "filters": [],
-    "script_text": "Journal \"ck_balmora_saren\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 5, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 400\nGoodbye"
+    "script_text": ""
   }
 ]
