@@ -64,16 +64,18 @@ local function syncGlobals()
     -- KotD is a sub-faction, and membership is contingent on the Temple
     local kotdRep = types.NPC.getFactionReputation(pself, const.KOTD_NAME)
     local kotdRank = types.NPC.getFactionRank(pself, const.KOTD_NAME)
-    local kotdExpelled = types.NPC.isExpelled(pself, const.KOTD_NAME) and 1 or 0
-    if (types.NPC.getFactionRank(pself, "Temple") < 1) or types.NPC.isExpelled(pself, "Temple") or kotdExpelled then
+    -- must pass in a number, not a boolean, to mwscript
+    local kotdExpelled = (types.NPC.isExpelled(pself, const.KOTD_NAME) or types.NPC.isExpelled(pself, "temple")) and 1 or 0
+    --[[if (types.NPC.getFactionRank(pself, "temple") < 1) then
         --- you can't be in KotD if you're not at least a Novice in the Temple
         kotdRep = 0
         kotdRank = -1
-    end
+    end]]
     core.sendGlobalEvent(MOD_NAME .. "onSyncKeepersOfTheDeadFaction", {
         player = pself.object,
         reputation = kotdRep,
-        rank = kotdRank,
+        -- rank off by 1 in mwscript
+        rank = kotdRank - 1,
         expelled = kotdExpelled
     })
 end

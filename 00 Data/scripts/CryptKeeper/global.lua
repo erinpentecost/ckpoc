@@ -165,6 +165,7 @@ local function onUrnPickedUp(data)
 end
 
 local function onSyncKeepersOfTheDeadFaction(data)
+    settings.debugPrint("onSyncKeepersOfTheDeadFaction: " .. aux_util.deepToString(data, 5))
     local vars = world.mwscript.getGlobalVariables(data.player)
     vars[const.KOTD_RANK_GVAR] = data.rank
     vars[const.KOTD_REPUTATION_GVAR] = data.reputation
