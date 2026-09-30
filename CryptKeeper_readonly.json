@@ -2082,7 +2082,7 @@
         "filter_type": "Global",
         "function": "VariableCompare",
         "comparison": "Equal",
-        "id": "x32_CS_UrnCarried",
+        "id": "CK_UrnCarried",
         "value": {
           "type": "Integer",
           "data": 1
@@ -2093,7 +2093,7 @@
         "filter_type": "Global",
         "function": "VariableCompare",
         "comparison": "Equal",
-        "id": "x32_CS_UrnDeliveryActive",
+        "id": "CK_UrnDeliveryActive",
         "value": {
           "type": "Integer",
           "data": 1
@@ -2140,7 +2140,7 @@
         "filter_type": "Global",
         "function": "VariableCompare",
         "comparison": "Equal",
-        "id": "x32_CS_UrnCarried",
+        "id": "CK_UrnCarried",
         "value": {
           "type": "Integer",
           "data": 0
@@ -2151,7 +2151,7 @@
         "filter_type": "Global",
         "function": "VariableCompare",
         "comparison": "Equal",
-        "id": "x32_CS_UrnDeliveryActive",
+        "id": "CK_UrnDeliveryActive",
         "value": {
           "type": "Integer",
           "data": 1
@@ -2209,7 +2209,7 @@
         "filter_type": "Global",
         "function": "VariableCompare",
         "comparison": "Equal",
-        "id": "x32_CS_UrnCarried",
+        "id": "CK_UrnCarried",
         "value": {
           "type": "Integer",
           "data": 0
@@ -2220,7 +2220,7 @@
         "filter_type": "Global",
         "function": "VariableCompare",
         "comparison": "Equal",
-        "id": "x32_CS_UrnDeliveryActive",
+        "id": "CK_UrnDeliveryActive",
         "value": {
           "type": "Integer",
           "data": 1
@@ -2267,7 +2267,7 @@
         "filter_type": "Global",
         "function": "VariableCompare",
         "comparison": "Equal",
-        "id": "x32_CS_UrnCarried",
+        "id": "CK_UrnCarried",
         "value": {
           "type": "Integer",
           "data": 0
@@ -2278,7 +2278,7 @@
         "filter_type": "Global",
         "function": "VariableCompare",
         "comparison": "Equal",
-        "id": "x32_CS_UrnDeliveryActive",
+        "id": "CK_UrnDeliveryActive",
         "value": {
           "type": "Integer",
           "data": 1
@@ -2314,7 +2314,7 @@
         "filter_type": "Global",
         "function": "VariableCompare",
         "comparison": "Equal",
-        "id": "x32_CS_UrnCarried",
+        "id": "CK_UrnCarried",
         "value": {
           "type": "Integer",
           "data": 0
@@ -2325,7 +2325,7 @@
         "filter_type": "Global",
         "function": "VariableCompare",
         "comparison": "Equal",
-        "id": "x32_CS_UrnDeliveryActive",
+        "id": "CK_UrnDeliveryActive",
         "value": {
           "type": "Integer",
           "data": 1
@@ -2397,7 +2397,7 @@
         "filter_type": "Global",
         "function": "VariableCompare",
         "comparison": "Less",
-        "id": "x32_CS_KeeperRank",
+        "id": "CK_KeeperRank",
         "value": {
           "type": "Integer",
           "data": 0
@@ -2444,7 +2444,7 @@
         "filter_type": "Global",
         "function": "VariableCompare",
         "comparison": "GreaterEqual",
-        "id": "x32_CS_KeeperRank",
+        "id": "CK_KeeperRank",
         "value": {
           "type": "Integer",
           "data": 0
@@ -2815,7 +2815,7 @@
         "filter_type": "Global",
         "function": "VariableCompare",
         "comparison": "NotEqual",
-        "id": "x32_CS_UrnDeliveryActive",
+        "id": "CK_UrnDeliveryActive",
         "value": {
           "type": "Integer",
           "data": 1
@@ -2873,7 +2873,7 @@
         "filter_type": "Global",
         "function": "VariableCompare",
         "comparison": "NotEqual",
-        "id": "x32_CS_UrnDeliveryActive",
+        "id": "CK_UrnDeliveryActive",
         "value": {
           "type": "Integer",
           "data": 1
@@ -2931,7 +2931,7 @@
         "filter_type": "Global",
         "function": "VariableCompare",
         "comparison": "NotEqual",
-        "id": "x32_CS_UrnDeliveryActive",
+        "id": "CK_UrnDeliveryActive",
         "value": {
           "type": "Integer",
           "data": 1
@@ -2989,7 +2989,7 @@
         "filter_type": "Global",
         "function": "VariableCompare",
         "comparison": "NotEqual",
-        "id": "x32_CS_UrnDeliveryActive",
+        "id": "CK_UrnDeliveryActive",
         "value": {
           "type": "Integer",
           "data": 1
@@ -3047,7 +3047,7 @@
         "filter_type": "Global",
         "function": "VariableCompare",
         "comparison": "NotEqual",
-        "id": "x32_CS_UrnDeliveryActive",
+        "id": "CK_UrnDeliveryActive",
         "value": {
           "type": "Integer",
           "data": 1
@@ -3105,7 +3105,7 @@
         "filter_type": "Global",
         "function": "VariableCompare",
         "comparison": "NotEqual",
-        "id": "x32_CS_UrnDeliveryActive",
+        "id": "CK_UrnDeliveryActive",
         "value": {
           "type": "Integer",
           "data": 1
@@ -3163,7 +3163,7 @@
         "filter_type": "Global",
         "function": "VariableCompare",
         "comparison": "NotEqual",
-        "id": "x32_CS_UrnDeliveryActive",
+        "id": "CK_UrnDeliveryActive",
         "value": {
           "type": "Integer",
           "data": 1
@@ -3221,7 +3221,7 @@
         "filter_type": "Global",
         "function": "VariableCompare",
         "comparison": "NotEqual",
-        "id": "x32_CS_UrnDeliveryActive",
+        "id": "CK_UrnDeliveryActive",
         "value": {
           "type": "Integer",
           "data": 1
@@ -3279,7 +3279,7 @@
         "filter_type": "Global",
         "function": "VariableCompare",
         "comparison": "NotEqual",
-        "id": "x32_CS_UrnDeliveryActive",
+        "id": "CK_UrnDeliveryActive",
         "value": {
           "type": "Integer",
           "data": 1
@@ -3337,7 +3337,7 @@
         "filter_type": "Global",
         "function": "VariableCompare",
         "comparison": "NotEqual",
-        "id": "x32_CS_UrnDeliveryActive",
+        "id": "CK_UrnDeliveryActive",
         "value": {
           "type": "Integer",
           "data": 1
@@ -3395,7 +3395,7 @@
         "filter_type": "Global",
         "function": "VariableCompare",
         "comparison": "NotEqual",
-        "id": "x32_CS_UrnDeliveryActive",
+        "id": "CK_UrnDeliveryActive",
         "value": {
           "type": "Integer",
           "data": 1
@@ -3442,7 +3442,7 @@
         "filter_type": "Global",
         "function": "VariableCompare",
         "comparison": "Equal",
-        "id": "x32_CS_KeeperExpelled",
+        "id": "CK_KeeperExpelled",
         "value": {
           "type": "Integer",
           "data": 1
@@ -3513,8 +3513,8 @@
         "index": 2,
         "filter_type": "Global",
         "function": "VariableCompare",
-        "comparison": "Greater",
-        "id": "x32_CS_KeeperRank",
+        "comparison": "GreaterEqual",
+        "id": "CK_KeeperRank",
         "value": {
           "type": "Integer",
           "data": 0
@@ -3560,8 +3560,8 @@
         "index": 2,
         "filter_type": "Global",
         "function": "VariableCompare",
-        "comparison": "Greater",
-        "id": "x32_CS_KeeperRank",
+        "comparison": "GreaterEqual",
+        "id": "CK_KeeperRank",
         "value": {
           "type": "Integer",
           "data": 0
@@ -3607,8 +3607,8 @@
         "index": 2,
         "filter_type": "Global",
         "function": "VariableCompare",
-        "comparison": "Greater",
-        "id": "x32_CS_KeeperRank",
+        "comparison": "GreaterEqual",
+        "id": "CK_KeeperRank",
         "value": {
           "type": "Integer",
           "data": 0
@@ -3654,8 +3654,8 @@
         "index": 2,
         "filter_type": "Global",
         "function": "VariableCompare",
-        "comparison": "Greater",
-        "id": "x32_CS_KeeperRank",
+        "comparison": "GreaterEqual",
+        "id": "CK_KeeperRank",
         "value": {
           "type": "Integer",
           "data": 0
@@ -3701,8 +3701,8 @@
         "index": 2,
         "filter_type": "Global",
         "function": "VariableCompare",
-        "comparison": "Greater",
-        "id": "x32_CS_KeeperRank",
+        "comparison": "GreaterEqual",
+        "id": "CK_KeeperRank",
         "value": {
           "type": "Integer",
           "data": 0
@@ -3748,8 +3748,8 @@
         "index": 2,
         "filter_type": "Global",
         "function": "VariableCompare",
-        "comparison": "Greater",
-        "id": "x32_CS_KeeperRank",
+        "comparison": "GreaterEqual",
+        "id": "CK_KeeperRank",
         "value": {
           "type": "Integer",
           "data": 0
@@ -3795,8 +3795,8 @@
         "index": 2,
         "filter_type": "Global",
         "function": "VariableCompare",
-        "comparison": "Greater",
-        "id": "x32_CS_KeeperRank",
+        "comparison": "GreaterEqual",
+        "id": "CK_KeeperRank",
         "value": {
           "type": "Integer",
           "data": 0
@@ -3842,8 +3842,8 @@
         "index": 2,
         "filter_type": "Global",
         "function": "VariableCompare",
-        "comparison": "Greater",
-        "id": "x32_CS_KeeperRank",
+        "comparison": "GreaterEqual",
+        "id": "CK_KeeperRank",
         "value": {
           "type": "Integer",
           "data": 0
@@ -3889,8 +3889,8 @@
         "index": 2,
         "filter_type": "Global",
         "function": "VariableCompare",
-        "comparison": "Greater",
-        "id": "x32_CS_KeeperRank",
+        "comparison": "GreaterEqual",
+        "id": "CK_KeeperRank",
         "value": {
           "type": "Integer",
           "data": 0
@@ -3937,7 +3937,7 @@
         "filter_type": "Global",
         "function": "VariableCompare",
         "comparison": "LessEqual",
-        "id": "x32_CS_KeeperReputation",
+        "id": "CK_KeeperReputation",
         "value": {
           "type": "Integer",
           "data": 40

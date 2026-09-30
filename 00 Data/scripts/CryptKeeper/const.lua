@@ -42,15 +42,15 @@ return {
     --- topic to get interment quests
     TOPIC_ASH_INTERMENT = "ash interment",
     --- count of total urns lost
-    URNS_LOST_GVAR = "x32_CS_UrnsLost",
+    URNS_LOST_GVAR = "CK_UrnsLost",
     --- count of total urns delivered
-    URNS_DELIVERED_GVAR = "x32_CS_UrnsDelivered",
+    URNS_DELIVERED_GVAR = "CK_UrnsDelivered",
     --- 1 if the player is carrying an urn right now
-    HAS_URN_GVAR = "x32_CS_UrnCarried",
+    HAS_URN_GVAR = "CK_UrnCarried",
     --- 1 if the player has an urn delivery quest active
-    URN_DELIVERY_ACTIVE_GVAR = "x32_CS_UrnDeliveryActive",
-    KOTD_RANK_GVAR = "x32_CS_KeeperRank",
-    KOTD_REPUTATION_GVAR = "x32_CS_KeeperReputation",
-    KOTD_EXPELLED_GVAR = "x32_CS_KeeperExpelled",
+    URN_DELIVERY_ACTIVE_GVAR = "CK_UrnDeliveryActive",
+    KOTD_RANK_GVAR = "CK_KeeperRank",
+    KOTD_REPUTATION_GVAR = "CK_KeeperReputation",
+    KOTD_EXPELLED_GVAR = "CK_KeeperExpelled",
     KOTD_NAME = "Keepers of the Dead"
 }
