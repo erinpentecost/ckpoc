@@ -74,6 +74,23 @@ local function onQuestUpdate(questId, stage)
             })
         end
     end
+
+    -- always update the Keepers of the Dead global vars.
+    -- KotD is a sub-faction, and membership is contingent on the Temple
+    local kotdRep = types.NPC.getFactionReputation(pself, "KeepersOfTheDead")
+    local kotdRank = types.NPC.getFactionRank(pself, "KeepersOfTheDead")
+    local kotdExpelled = types.NPC.isExpelled(actor, "KeepersOfTheDead")
+    if (types.NPC.getFactionRank(pself, "Temple") < 1) or types.NPC.isExpelled(actor, "Temple") or kotdExpelled then
+        --- you can't be in KotD if you're not at least a Novice in the Temple
+        kotdRep = 0
+        kotdRank = -1
+    end
+    core.sendGlobalEvent(MOD_NAME .. "onSyncKeepersOfTheDeadFaction", {
+        player = pself.object,
+        reputation = kotdRep,
+        rank = kotdRank,
+        expelled = kotdExpelled
+    })
 end
 
 local function isUndead(creature)

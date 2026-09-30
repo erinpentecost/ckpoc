@@ -2,7 +2,7 @@
 
 # Define your nested ESP path relative to the root directory
 # Edit this path if your ESP is located somewhere else
-ESP_PATH=$(git diff --cached --name-only | grep '\CryptKeeper.esp$' | head -n 1)
+ESP_PATH=$(git diff --cached --name-only | grep 'CryptKeeper.omwaddon$' | head -n 1)
 
 # If no staged ESP file changed, exit silently and allow commit
 if [ -z "$ESP_PATH" ]; then
@@ -21,6 +21,7 @@ fi
 
 # Convert the nested ESP to the root JSON file
 OUTPUT_JSON="CryptKeeper_readonly.json"
+rm -f "$OUTPUT_JSON"
 
 if tes3conv "$ESP_PATH" "$OUTPUT_JSON"; then
     echo "Successfully updated $OUTPUT_JSON"
