@@ -41,6 +41,7 @@ return {
     MWS_LOST_URN_TOKEN = "CK_LOST_URN",
     --- topic to get interment quests
     TOPIC_ASH_INTERMENT = "ash interment",
+    TOPIC_DEAD_KEEPERS = "dead keepers",
     --- count of total urns lost
     URNS_LOST_GVAR = "CK_UrnsLost",
     --- count of total urns delivered

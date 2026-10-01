@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "",
     "description": "",
-    "num_objects": 129,
+    "num_objects": 137,
     "masters": [
       [
         "Morrowind.esm",
@@ -2292,7 +2292,7 @@
     "flags": "",
     "id": "20920506169979889291152219322",
     "prev_id": "424330741314432785290605875144",
-    "next_id": "94934004608200862150161078915",
+    "next_id": "35000980034551236700042603400",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -2337,9 +2337,9 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "94934004608200862150161078915",
+    "id": "35000980034551236700042603400",
     "prev_id": "20920506169979889291152219322",
-    "next_id": "35316478927982967697447248614",
+    "next_id": "94934004608200862150161078915",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -2373,55 +2373,44 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "35316478927982967697447248614",
-    "prev_id": "94934004608200862150161078915",
+    "id": "94934004608200862150161078915",
+    "prev_id": "35000980034551236700042603400",
     "next_id": "33038037096876015443483564962",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
       "speaker_rank": -1,
       "speaker_sex": "Any",
-      "player_rank": 1
+      "player_rank": -1
     },
     "speaker_id": "feldrelo sadri",
     "speaker_race": "",
     "speaker_class": "",
     "speaker_faction": "",
     "speaker_cell": "",
-    "player_faction": "Temple",
+    "player_faction": "",
     "sound_path": "",
-    "text": "Good work. While I'm not officially a member of the Dead Keepers, I am empowered by my position at the Temple to induct you on a probational basis. You are hereby an associate of the Keepers of the Dead.\n\nThere are still many more urns to inter. Your service is greatly appreciated.",
+    "text": "Put simply, there's a large backlog of remains that must be interred in the ancestral tombs of Morrowind. The work is simple, but honest. I'll need to induct you into the Dead Keepers before you can be allowed to handle remains.",
     "filters": [
       {
-        "index": 1,
+        "index": 0,
         "filter_type": "Global",
         "function": "VariableCompare",
-        "comparison": "Less",
+        "comparison": "Equal",
         "id": "CK_KeeperRank",
         "value": {
           "type": "Integer",
-          "data": 0
-        }
-      },
-      {
-        "index": 0,
-        "filter_type": "Journal",
-        "function": "JournalType",
-        "comparison": "Equal",
-        "id": "ck_balmora_tharys",
-        "value": {
-          "type": "Integer",
-          "data": 50
+          "data": -1
         }
       }
     ],
-    "script_text": "Journal \"ck_balmora_tharys\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 3, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 100\nPCJoinFaction \"Keepers of the Dead\"\nPCRaiseRank \"Keepers of the Dead\"\nGoodbye"
+    "script_text": ";individual quest completion responses go below here"
   },
   {
     "type": "DialogueInfo",
     "flags": "",
     "id": "33038037096876015443483564962",
-    "prev_id": "35316478927982967697447248614",
+    "prev_id": "94934004608200862150161078915",
     "next_id": "420127015115448849562523036190",
     "data": {
       "dialogue_type": "Topic",
@@ -2440,17 +2429,6 @@
     "text": "Thank you for delivering the remains of Mehra Tharys.\n\nThere are still many more urns to inter. Your service is greatly appreciated.",
     "filters": [
       {
-        "index": 1,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "GreaterEqual",
-        "id": "CK_KeeperRank",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      },
-      {
         "index": 0,
         "filter_type": "Journal",
         "function": "JournalType",
@@ -2462,7 +2440,7 @@
         }
       }
     ],
-    "script_text": "Journal \"ck_balmora_tharys\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 3, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 100\nGoodbye"
+    "script_text": "Journal \"ck_balmora_tharys\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 3, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 100\n"
   },
   {
     "type": "DialogueInfo",
@@ -2498,7 +2476,7 @@
         }
       }
     ],
-    "script_text": "Journal \"ck_balmora_samarys\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 3, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 100\nGoodbye"
+    "script_text": "Journal \"ck_balmora_samarys\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 3, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 100\n"
   },
   {
     "type": "DialogueInfo",
@@ -2534,7 +2512,7 @@
         }
       }
     ],
-    "script_text": "Journal \"ck_balmora_heran\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 5, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 400\nGoodbye"
+    "script_text": "Journal \"ck_balmora_heran\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 5, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 400\n"
   },
   {
     "type": "DialogueInfo",
@@ -2570,7 +2548,7 @@
         }
       }
     ],
-    "script_text": "Journal \"ck_balmora_norvayn\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 3, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 100\nGoodbye"
+    "script_text": "Journal \"ck_balmora_norvayn\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 3, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 100\n"
   },
   {
     "type": "DialogueInfo",
@@ -2606,7 +2584,7 @@
         }
       }
     ],
-    "script_text": "Journal \"ck_balmora_lleran\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 3, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 100\nGoodbye"
+    "script_text": "Journal \"ck_balmora_lleran\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 3, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 100\n"
   },
   {
     "type": "DialogueInfo",
@@ -2642,7 +2620,7 @@
         }
       }
     ],
-    "script_text": "Journal \"ck_balmora_sarys\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 3, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 100\nGoodbye"
+    "script_text": "Journal \"ck_balmora_sarys\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 3, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 100\n"
   },
   {
     "type": "DialogueInfo",
@@ -2671,14 +2649,14 @@
         "filter_type": "Journal",
         "function": "JournalType",
         "comparison": "Equal",
-        "id": "ck_balmora_heran",
+        "id": "ck_balmora_andrethi",
         "value": {
           "type": "Integer",
           "data": 50
         }
       }
     ],
-    "script_text": "Journal \"ck_balmora_heran\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 5, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 400\nGoodbye"
+    "script_text": "Journal \"ck_balmora_andrethi\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 5, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 400\n"
   },
   {
     "type": "DialogueInfo",
@@ -2714,7 +2692,7 @@
         }
       }
     ],
-    "script_text": "Journal \"ck_balmora_thelas\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 3, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 100\nGoodbye"
+    "script_text": "Journal \"ck_balmora_thelas\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 3, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 100\n"
   },
   {
     "type": "DialogueInfo",
@@ -2750,7 +2728,7 @@
         }
       }
     ],
-    "script_text": "Journal \"ck_balmora_thalas\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 3, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 100\nGoodbye"
+    "script_text": "Journal \"ck_balmora_thalas\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 3, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 100\n"
   },
   {
     "type": "DialogueInfo",
@@ -2786,7 +2764,7 @@
         }
       }
     ],
-    "script_text": "Journal \"ck_balmora_saren\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 5, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 400\nGoodbye"
+    "script_text": "Journal \"ck_balmora_saren\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 5, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 400\n"
   },
   {
     "type": "DialogueInfo",
@@ -3471,7 +3449,7 @@
     "speaker_cell": "",
     "player_faction": "Temple",
     "sound_path": "",
-    "text": "Put simply, there's a large backlog of remains that must be interred in the tombs near Balmora. The work is simple, but honest.\n\nWould you deliver this ceremonial urn containing the remains of Mehra Tharys in the Tharys Ancestral Tomb?",
+    "text": "Would you deliver this ceremonial urn containing the remains of Mehra Tharys in the Tharys Ancestral Tomb? It's quite heavy.",
     "filters": [
       {
         "index": 1,
@@ -3485,7 +3463,7 @@
         }
       }
     ],
-    "script_text": "Choice \"I'm ready.\" 1, \"Later.\" 2\n;this is the first quest, so the conditions are special"
+    "script_text": "Choice \"I'm ready.\" 1, \"Later.\" 2\n"
   },
   {
     "type": "DialogueInfo",
@@ -3509,17 +3487,6 @@
     "sound_path": "",
     "text": "The remains of Marvisia Samarys need to put to rest at the Samarys Ancestral Tomb. Are you interested?",
     "filters": [
-      {
-        "index": 2,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "GreaterEqual",
-        "id": "CK_KeeperRank",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      },
       {
         "index": 1,
         "filter_type": "Journal",
@@ -3557,17 +3524,6 @@
     "text": "The Heran Ancestral Tomb hasn't been checked on in a long time. Inter the remains of Joveth Heran there, and ensure the tomb itself has been properly secured.",
     "filters": [
       {
-        "index": 2,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "GreaterEqual",
-        "id": "CK_KeeperRank",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      },
-      {
         "index": 1,
         "filter_type": "Journal",
         "function": "JournalType",
@@ -3603,17 +3559,6 @@
     "sound_path": "",
     "text": "This next assignment will take you to the Norvayn Ancestral Tomb, to inter the remains of Rilvas Norvayn. It's to the northwest of Balmora, along the road that passes Hlormaren.",
     "filters": [
-      {
-        "index": 2,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "GreaterEqual",
-        "id": "CK_KeeperRank",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      },
       {
         "index": 1,
         "filter_type": "Journal",
@@ -3651,17 +3596,6 @@
     "text": "Thanks to your efforts, we're finally making progress on this backlog of interments. When we received our first shipment of ceremonial urns from the Great Ghostfence, I nearly fainted at the sheer number of them.\n\nYour next interment is in the Lleran Ancestral Tomb. Follow the Odai south out of Balmora, then cross the bridge near the Shulk Egg Mine. Follow the road, and it will be on your left.",
     "filters": [
       {
-        "index": 2,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "GreaterEqual",
-        "id": "CK_KeeperRank",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      },
-      {
         "index": 1,
         "filter_type": "Journal",
         "function": "JournalType",
@@ -3697,17 +3631,6 @@
     "sound_path": "",
     "text": "Next up is Sarys Ancestral Tomb. It's on an island to the west of Seyda Neen.",
     "filters": [
-      {
-        "index": 2,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "GreaterEqual",
-        "id": "CK_KeeperRank",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      },
       {
         "index": 1,
         "filter_type": "Journal",
@@ -3745,17 +3668,6 @@
     "text": "Put to rest the remains of Bylen Andrethi at the Andrethi Ancestral Tomb. It's west of Balmora and south of the Norvayn Ancestral Tomb, which I've sent you to before.",
     "filters": [
       {
-        "index": 2,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "GreaterEqual",
-        "id": "CK_KeeperRank",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      },
-      {
         "index": 1,
         "filter_type": "Journal",
         "function": "JournalType",
@@ -3791,17 +3703,6 @@
     "sound_path": "",
     "text": "Thelas Ancestral Tomb. Not Thalas, which is next on the list. Thelas is on the coast, west of Seyda Neen.",
     "filters": [
-      {
-        "index": 2,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "GreaterEqual",
-        "id": "CK_KeeperRank",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      },
       {
         "index": 1,
         "filter_type": "Journal",
@@ -3839,17 +3740,6 @@
     "text": "Your next interment is in Thalas Ancestral Tomb. Follow the foyada near Fort Moonmoth north, then take a right at Assarnatamat.",
     "filters": [
       {
-        "index": 2,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "GreaterEqual",
-        "id": "CK_KeeperRank",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      },
-      {
         "index": 1,
         "filter_type": "Journal",
         "function": "JournalType",
@@ -3885,17 +3775,6 @@
     "sound_path": "",
     "text": "This will be your last interment from me, %PCName. It's hard to believe that we're nearly finished.\n\nPlease deliver Felara Saren to the Saren Ancestral Tomb. To get there, take the bridge near Fort Moonmoth that spans the foyada. Once on the other side, travel northeast.",
     "filters": [
-      {
-        "index": 2,
-        "filter_type": "Global",
-        "function": "VariableCompare",
-        "comparison": "GreaterEqual",
-        "id": "CK_KeeperRank",
-        "value": {
-          "type": "Integer",
-          "data": 0
-        }
-      },
       {
         "index": 1,
         "filter_type": "Journal",
@@ -3991,6 +3870,274 @@
     "player_faction": "",
     "sound_path": "",
     "text": "If you had better standing with the Temple, I'd talk with you about it.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
+    "id": "Dead Keepers",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "25365890503269356269175407689",
+    "prev_id": "",
+    "next_id": "218752014911675009977331009780",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": 0,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "Temple",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "You've been expelled from Keepers of the Dead.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "CK_KeeperExpelled",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "218752014911675009977331009780",
+    "prev_id": "25365890503269356269175407689",
+    "next_id": "284986573213655335525191654952",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": 0,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "Temple",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Yes, Keeper? How can I help you?",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "GreaterEqual",
+        "id": "CK_KeeperRank",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "284986573213655335525191654952",
+    "prev_id": "218752014911675009977331009780",
+    "next_id": "278524844112594259828166507503",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 1
+    },
+    "speaker_id": "feldrelo sadri",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "Temple",
+    "sound_path": "",
+    "text": "I was hoping you would help. Please let me know if you change your mind.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Less",
+        "id": "CK_KeeperRank",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "278524844112594259828166507503",
+    "prev_id": "284986573213655335525191654952",
+    "next_id": "325544046718149617157545681645",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 1
+    },
+    "speaker_id": "feldrelo sadri",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "Temple",
+    "sound_path": "",
+    "text": "Then by the authority invested to me by the Tribunal, I hereby induct you into Keepers of the Dead.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Less",
+        "id": "CK_KeeperRank",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "PCJoinFaction \"Keepers of the Dead\"\nPCRaiseRank \"Keepers of the Dead\"\n"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "325544046718149617157545681645",
+    "prev_id": "278524844112594259828166507503",
+    "next_id": "834281628014101489744156040460",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 1
+    },
+    "speaker_id": "feldrelo sadri",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "Temple",
+    "sound_path": "",
+    "text": "The Keepers of the Dead are a special division within the Temple who are dedicated to the care of our ancestors. They mostly operate out of Necrom, but there are representatives at the Great Ghostfence at times. They've recently come into an absurd amount of work thanks to the Edict of Exhumation, and they are falling behind on ash interments. I can admit you as a provisional member if you would like to help.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Less",
+        "id": "CK_KeeperRank",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Choice \"Join the Keepers of the Dead.\" 1, \"Later.\" 2\n;PCJoinFaction \"Keepers of the Dead\"\n;PCRaiseRank \"Keepers of the Dead\"\n"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "834281628014101489744156040460",
+    "prev_id": "325544046718149617157545681645",
+    "next_id": "17206603369916458785687143554",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 1
+    },
+    "speaker_id": "feldrelo sadri",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "Temple",
+    "sound_path": "",
+    "text": "The Keepers of the Dead are a special division within the Temple who are dedicated to the care of our ancestors. If you are interested in joining, you must first become a Novice of the Temple by performing your duties.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Less",
+        "id": "CK_KeeperRank",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "17206603369916458785687143554",
+    "prev_id": "834281628014101489744156040460",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "Temple",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "The Keepers of the Dead are a special division within the Temple who are dedicated to the care of our ancestors. They mostly operate out of Necrom, but there are representatives at the Great Ghostfence at times.",
     "filters": [],
     "script_text": ""
   }

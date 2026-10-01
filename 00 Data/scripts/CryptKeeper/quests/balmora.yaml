@@ -7,7 +7,7 @@
 #     coc "Balmora, Temple"
 #     PCRaiseRank "Temple"
 #     coc "Tharys Ancestral Tomb"
-#     MessageBox "%d" player->GetPCRank "keepers of th dead"
+#     MessageBox "%d" player->GetPCRank "keepers of the dead"
 
 
 # reward guide:

@@ -326,18 +326,25 @@ local function DialogueResponse(data)
 
     local topic = core.dialogue[data.type].records[data.recordId]
 
-    if topic.id:lower() ~= const.TOPIC_ASH_INTERMENT:lower() then
-        return
+    if topic.id:lower() == const.TOPIC_ASH_INTERMENT then
+        for _, info in pairs(topic.infos) do
+            if (info.id == data.infoId) and info.resultScript then
+                --print(info.resultScript)
+                if info.resultScript:find(const.MWS_LOST_URN_TOKEN, 1, true) then
+                    onQuestFailed(data)
+                end
+                return
+            end
+        end
     end
 
-    for _, info in pairs(topic.infos) do
-        if (info.id == data.infoId) and info.resultScript then
-            --print(info.resultScript)
-            if info.resultScript:find(const.MWS_LOST_URN_TOKEN, 1, true) then
-                onQuestFailed(data)
-            end
-            return
-        end
+    local syncedTopics = {
+        [const.TOPIC_ASH_INTERMENT] = true,
+        [const.TOPIC_DEAD_KEEPERS] = true,
+    }
+
+    if syncedTopics[topic.id:lower()] then
+        syncGlobals()
     end
 end
 
