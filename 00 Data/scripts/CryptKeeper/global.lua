@@ -172,6 +172,19 @@ local function onSyncKeepersOfTheDeadFaction(data)
     vars[const.KOTD_EXPELLED_GVAR] = data.expelled
 end
 
+local function onCalmCreatures(data)
+    settings.debugPrint("Calming enemies: " .. aux_util.deepToString(data.creatures, 3))
+    for _, creature in ipairs(data.creatures) do
+        creature.type.activeSpells(creature):add({
+            id = const.PEACE_SPELL,
+            effects = { 0 },
+            ignoreResistances = true,
+            ignoreSpellAbsorption = true,
+            ignoreReflect = true
+        })
+    end
+end
+
 return {
     eventHandlers = {
         [MOD_NAME .. "onQuestStart"] = onQuestStart,
@@ -180,6 +193,7 @@ return {
         [MOD_NAME .. "onUrnPickedUp"] = onUrnPickedUp,
         [MOD_NAME .. "onUrnLost"] = onUrnLost,
         [MOD_NAME .. "onSyncKeepersOfTheDeadFaction"] = onSyncKeepersOfTheDeadFaction,
+        [MOD_NAME .. "onCalmCreatures"] = onCalmCreatures,
     },
     engineHandlers = {
         onLoad = onLoad,

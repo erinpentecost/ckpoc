@@ -118,6 +118,9 @@ local function isBandit(actor)
     return fightStat >= 90
 end
 
+---@class EnemiesBag
+---@field interlopers table[]
+---@field undead table[]
 local function getEnemies()
     --- don't make this a hard dependency
     local followers = {}
@@ -126,9 +129,14 @@ local function getEnemies()
     end
     --- iterate nearby for all enemies
     local enemies = {}
+    local undead = {}
     for _, actor in ipairs(nearby.actors) do
-        if actor:isValid() and not types.Actor.isDead(actor) and not followers[actor.id] and not isUndead(actor) and isBandit(actor) then
-            table.insert(enemies, actor)
+        if actor:isValid() and not types.Actor.isDead(actor) and not followers[actor.id] and isBandit(actor) then
+            if isUndead(actor) then
+                table.insert(undead, actor)
+            else
+                table.insert(enemies, actor)
+            end
         end
     end
     return enemies
@@ -161,8 +169,10 @@ local function onCellLoaded()
             if quest.metaData.destCellEnterStage ~= nil and quest.playerQuest.stage < quest.metaData.destCellEnterStage then
                 quest.playerQuest:addJournalEntry(quest.metaData.destCellEnterStage, pself)
             end
-            enemiesInCurrentDestCell = getEnemies()
+            local undeadInCurrentDestCell = {}
+            enemiesInCurrentDestCell, undeadInCurrentDestCell = getEnemies()
             settings.debugPrint("Enemies in current cell: " .. tostring(#enemiesInCurrentDestCell))
+            core.sendGlobalEvent(MOD_NAME .. "onCalmCreatures", {creatures=undeadInCurrentDestCell})
         elseif (quest.metaData.destCell == lastCell) and (quest.playerQuest.stage == quest.metaData.placeStage) and latestPlacedUrns[quest.metaData.id] then
             --- we just left the destination cell, and we previously placed the urn.
             --- if we don't have the urn in our inventory, then we'll advance quest stage

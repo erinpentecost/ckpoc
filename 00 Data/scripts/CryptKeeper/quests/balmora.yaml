@@ -9,6 +9,8 @@
 #     coc "Tharys Ancestral Tomb"
 #     MessageBox "%d" player->GetPCRank "keepers of the dead"
 
+# Boran Andules is the KotD representative in vvardenfell. he should be in "Ghostgate, Tower of Dawn".
+
 
 # reward guide:
 # +3 KotD rep for easy delivery. +5 if you had to clear out the tomb.

@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "",
     "description": "",
-    "num_objects": 137,
+    "num_objects": 148,
     "masters": [
       [
         "Morrowind.esm",
@@ -172,6 +172,170 @@
         "None"
       ],
       "flags": ""
+    }
+  },
+  {
+    "type": "Spell",
+    "flags": "",
+    "id": "ck_calmtomb",
+    "name": "Peace",
+    "effects": [
+      {
+        "magic_effect": "CalmCreature",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 10800,
+        "min_magnitude": 100,
+        "max_magnitude": 100
+      }
+    ],
+    "data": {
+      "spell_type": "Spell",
+      "cost": 0,
+      "flags": "ALWAYS_SUCCEEDS"
+    }
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "ck_boran_andules",
+    "name": "Boran Andules",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "steel spider blade"
+      ],
+      [
+        1,
+        "extravagant_amulet_02"
+      ],
+      [
+        1,
+        "extravagant_ring_02"
+      ],
+      [
+        1,
+        "extravagant_skirt_01"
+      ],
+      [
+        1,
+        "extravagant_shirt_02"
+      ],
+      [
+        1,
+        "extravagant_shoes_01"
+      ],
+      [
+        2,
+        "p_restore_health_c"
+      ],
+      [
+        2,
+        "p_restore_fatigue_q"
+      ],
+      [
+        2,
+        "p_cure_poison_s"
+      ],
+      [
+        2,
+        "p_cure_paralyzation_s"
+      ]
+    ],
+    "spells": [
+      "summon greater bonewalker",
+      "summon ancestral ghost",
+      "alad's caliginy",
+      "Sanctuary",
+      "far silence",
+      "sotha's mirror"
+    ],
+    "ai_data": {
+      "hello": 30,
+      "fight": 90,
+      "flee": 30,
+      "alarm": 90,
+      "services": ""
+    },
+    "ai_packages": [
+      {
+        "type": "Wander",
+        "distance": 0,
+        "duration": 5,
+        "game_hour": 0,
+        "idle2": 60,
+        "idle3": 20,
+        "idle4": 10,
+        "idle5": 10,
+        "idle6": 0,
+        "idle7": 0,
+        "idle8": 10,
+        "idle9": 0,
+        "reset": 1
+      }
+    ],
+    "travel_destinations": [],
+    "race": "Dark Elf",
+    "class": "Witch",
+    "faction": "Keepers of the Dead",
+    "head": "b_n_dark elf_f_head_02",
+    "hair": "b_n_dark elf_f_hair_09",
+    "npc_flags": "IS_BASE",
+    "blood_type": 0,
+    "data": {
+      "level": 10,
+      "stats": {
+        "attributes": [
+          52,
+          54,
+          57,
+          53,
+          72,
+          35,
+          55,
+          50
+        ],
+        "skills": [
+          6,
+          6,
+          6,
+          6,
+          6,
+          11,
+          6,
+          6,
+          11,
+          15,
+          25,
+          34,
+          48,
+          56,
+          54,
+          15,
+          15,
+          48,
+          6,
+          24,
+          24,
+          29,
+          49,
+          11,
+          6,
+          24,
+          6
+        ],
+        "health": 70,
+        "magicka": 300,
+        "fatigue": 197
+      },
+      "disposition": 30,
+      "reputation": 0,
+      "rank": 3,
+      "gold": 0
     }
   },
   {
@@ -2052,6 +2216,95 @@
   {
     "type": "Dialogue",
     "flags": "",
+    "id": "duties",
+    "dialogue_type": "Topic"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "2991215774797274883773616579",
+    "prev_id": "252869918238779866",
+    "next_id": "12857732639241370705563569575",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "ck_boran_andules",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Go help out Feldrelo Sadri at the Balmora Temple. She's fallen behind on ash interments.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Less",
+        "id": "ck_balmora_saren",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "GreaterEqual",
+        "id": "CK_KeeperRank",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "12857732639241370705563569575",
+    "prev_id": "2991215774797274883773616579",
+    "next_id": "",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "ck_boran_andules",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "I don't have anything you can help me with right now.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "GreaterEqual",
+        "id": "CK_KeeperRank",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "Dialogue",
+    "flags": "",
     "id": "ash interment",
     "dialogue_type": "Topic"
   },
@@ -3882,8 +4135,234 @@
   {
     "type": "DialogueInfo",
     "flags": "",
-    "id": "25365890503269356269175407689",
+    "id": "14318253868907886281749534900",
     "prev_id": "",
+    "next_id": "92528161506640386841800093603",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": 0,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "ck_boran_andules",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "You're not cut out for this work, %PCName. Leave me be.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Equal",
+        "id": "CK_KeeperExpelled",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "92528161506640386841800093603",
+    "prev_id": "14318253868907886281749534900",
+    "next_id": "779250493012716274850160863252",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 1
+    },
+    "speaker_id": "ck_boran_andules",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "Temple",
+    "sound_path": "",
+    "text": "That's probably for the best.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 2
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Less",
+        "id": "CK_KeeperRank",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "PCJoinFaction \"Keepers of the Dead\"\nPCRaiseRank \"Keepers of the Dead\"\n"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "779250493012716274850160863252",
+    "prev_id": "92528161506640386841800093603",
+    "next_id": "925162824010536709165180697107",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 1
+    },
+    "speaker_id": "ck_boran_andules",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "Temple",
+    "sound_path": "",
+    "text": "I don't know what madness drove you to sign up for this, but misery loves company. Fine, you're in. Ready for your duties?",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Function",
+        "function": "Choice",
+        "comparison": "Equal",
+        "id": "",
+        "value": {
+          "type": "Integer",
+          "data": 1
+        }
+      },
+      {
+        "index": 1,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Less",
+        "id": "CK_KeeperRank",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "PCJoinFaction \"Keepers of the Dead\"\nPCRaiseRank \"Keepers of the Dead\"\n"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "925162824010536709165180697107",
+    "prev_id": "779250493012716274850160863252",
+    "next_id": "764719758014143503218614441518",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 1
+    },
+    "speaker_id": "ck_boran_andules",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "Temple",
+    "sound_path": "",
+    "text": "Thanks to this thrice-damned Edict of Exhumation, the Keepers of the Dead have to dismantle years of progress on the Ghostfence. I'm overseeing the effort, and I don't have time for pleasantries. Unless you are interested in joining me in this deep pit of mind-numbing work, leave me be.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Less",
+        "id": "CK_KeeperRank",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": "Choice \"Join the Keepers of the Dead.\" 1, \"Later.\" 2"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "764719758014143503218614441518",
+    "prev_id": "925162824010536709165180697107",
+    "next_id": "123863410213792296823686210423",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "ck_boran_andules",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Yes, %PCRank? Are you here for your duties? I don't have time for a history lesson.",
+    "filters": [
+      {
+        "index": 0,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "GreaterEqual",
+        "id": "CK_KeeperRank",
+        "value": {
+          "type": "Integer",
+          "data": 0
+        }
+      }
+    ],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "123863410213792296823686210423",
+    "prev_id": "764719758014143503218614441518",
+    "next_id": "25365890503269356269175407689",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "ck_boran_andules",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "Thanks to this thrice-damned Edict of Exhumation, the Keepers of the Dead have to dismantle years of progress on the Ghostfence. I'm overseeing the effort, and I don't have time for pleasantries.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "25365890503269356269175407689",
+    "prev_id": "123863410213792296823686210423",
     "next_id": "218752014911675009977331009780",
     "data": {
       "dialogue_type": "Topic",
@@ -4122,6 +4601,30 @@
     "flags": "",
     "id": "17206603369916458785687143554",
     "prev_id": "834281628014101489744156040460",
+    "next_id": "19145350286083160910037735856",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": -1
+    },
+    "speaker_id": "",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "Ghostgate, Tower of Dawn",
+    "player_faction": "",
+    "sound_path": "",
+    "text": "You're probably looking for Boran Andules. He's downstairs.",
+    "filters": [],
+    "script_text": ""
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "19145350286083160910037735856",
+    "prev_id": "17206603369916458785687143554",
     "next_id": "",
     "data": {
       "dialogue_type": "Topic",

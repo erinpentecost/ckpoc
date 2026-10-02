@@ -53,5 +53,6 @@ return {
     KOTD_RANK_GVAR = "CK_KeeperRank",
     KOTD_REPUTATION_GVAR = "CK_KeeperReputation",
     KOTD_EXPELLED_GVAR = "CK_KeeperExpelled",
-    KOTD_NAME = "keepers of the dead"
+    KOTD_NAME = "keepers of the dead",
+    PEACE_SPELL = "ck_calmtomb"
 }
