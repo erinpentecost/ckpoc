@@ -1,28 +1,28 @@
-Alas Ancestral Tomb — Located northwest of Mount Assarnibibi, at the end of a short canyon. (map) (Quest Related)
+Alas Ancestral Tomb — Located northwest of Mount Assarnibibi, at the end of a short canyon. (map) (Quest Related) daedra
 Alen Ancestral Tomb — A hideout for some vampires, located in the West Gash mountains southeast of Khuul. (map)
 Andalen Ancestral Tomb — A small tomb on Azura's Coast located southeast of the Erabenimsun Camp near the peninsula. (map)
 Andalor Ancestral Tomb — A small tomb west of Indoranyon in the Grazelands. (map)
 Andas Ancestral Tomb — A medium-sized tomb, located north of the Erabenimsun Camp and along the coast. (map)
-Andavel Ancestral Tomb — A tomb located at the center of the large island north of Urshilaku Camp. (map)
+Andavel Ancestral Tomb — A tomb located at the center of the large island north of Urshilaku Camp. (map) daedra
 Andrano Ancestral Tomb — A medium-sized tomb halfway on the road between Seyda Neen and Pelagiad. (map) (Quest Related)
-Andrethi Ancestral Tomb — A tomb just west over the mountains from Balmora. (map)
-Andules Ancestral Tomb — A small, daedra-occupied tomb in the northern Molag Amur region west of Tel Aruhn. (map)
+Andrethi Ancestral Tomb — A tomb just west over the mountains from Balmora. (map) vampires
+Andules Ancestral Tomb — A small, daedra-occupied tomb in the northern Molag Amur region west of Tel Aruhn. (map) daedra
 Aralen Ancestral Tomb — A hideout for some vampires in the Grazelands. (map)
-Aran Ancestral Tomb — A medium-sized tomb east of Lake Nabia in the Molag Amur region. (map)
-Arano Ancestral Tomb — A large, Daedra infested tomb on the southern tip of Tel Branora's island. (map)
+Aran Ancestral Tomb — A medium-sized tomb east of Lake Nabia in the Molag Amur region. (map) daedra
+Arano Ancestral Tomb — A large, Daedra infested tomb on the southern tip of Tel Branora's island. (map) daedra
 Arenim Ancestral Tomb — A large tomb on Azura's Coast south of Sadrith Mora, east of the Erabenimsun Camp, and close to the Holamayan monastery. (map) (Quest Related)
-Arethan Ancestral Tomb — A small tomb in the mountains of Molag Amur. (map)
+Arethan Ancestral Tomb — A small tomb in the mountains of Molag Amur. (map) daedra
 Aryon Ancestral Tomb — A medium-sized tomb in the southern Ashlands region. (map)
 Arys Ancestral Tomb — A small tomb on an island west of Tel Branora in the Azura's Coast region. (map)
 Ashmelech — The isolated home of the Aundae vampire clan. (map)
-Baram Ancestral Tomb — A large tomb on an island north of Tel Aruhn in the Azura's Coast region. (map)
+Baram Ancestral Tomb — A large tomb on an island north of Tel Aruhn in the Azura's Coast region. (map) daedra
 Beran Ancestral Tomb — A Daedra infested tomb south of Tel Branora in the Azura's Coast region. (map)
 Dareleth Ancestral Tomb — A small tomb in the northeast Ashlands, west of Tel Vos. (map)
 Dralas Ancestral Tomb — A large tomb between Dagon Fel and Rotheran on the island of Sheogorad. (map)
-Drath Ancestral Tomb — A small tomb southwest of the Urshilaku Camp in the Ashlands region. (map)
-Dreloth Ancestral Tomb — A small tomb on Azura's Coast, east of the Erabenimsun Camp. (map)
-Drethan Ancestral Tomb — A small tomb on an island in the Sheogorad Region, east of Rotheran. (map) (Quest Related)
-Drinith Ancestral Tomb — The large tomb in the northern Ashlands, east-northeast of Kogoruhn. (map)
+Drath Ancestral Tomb — A small tomb southwest of the Urshilaku Camp in the Ashlands region. (map) daedra
+Dreloth Ancestral Tomb — A small tomb on Azura's Coast, east of the Erabenimsun Camp. (map) daedra
+Drethan Ancestral Tomb — A small tomb on an island in the Sheogorad Region, east of Rotheran. (map) (Quest Related) vampire
+Drinith Ancestral Tomb — The large tomb in the northern Ashlands, east-northeast of Kogoruhn. (map) daedra
 Dulo Ancestral Tomb — A hideout for some vampires in the northwestern Molag Amur region. (map)
 Fadathram Ancestral Tomb — A small tomb south of the Ghostfence in the southern Ashlands region. (map)
 Falas Ancestral Tomb — A small, Daedra-occupied tomb just south of Gnisis. (map)

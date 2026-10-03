@@ -1,0 +1,89 @@
+Uveran Ancestral Tomb, West Gash, undead
+Norvayn Ancestral Tomb, Bitter Coast, undead
+Hlervi Ancestral Tomb, Azura's Coast, undead
+Andalor Ancestral Tomb, Grazelands, undead
+Vandus Ancestral Tomb, Molag Amur, undead
+Andrethi Ancestral Tomb, Bitter Coast, vampires
+Thelas Ancestral Tomb, Bitter Coast, undead
+Senim Ancestral Tomb, Sheogorad, undead
+Othrelas Ancestral Tomb, Ascadian Isles, vampires
+Hlervu Ancestral Tomb, Azura's Coast, undead
+Salvel Ancestral Tomb, Ashlands, undead vampires
+Telvayn Ancestral Tomb, West Gash, other
+Venim Ancestral Tomb, Grazelands, undead other
+Ienith Ancestral Tomb, Grazelands, undead
+Fadathram Ancestral Tomb, Ashlands, undead
+Aralen Ancestral Tomb, Grazelands, vampires
+Aran Ancestral Tomb, Molag Amur, undead daedra
+Falas Ancestral Tomb, West Gash, daedra
+Arys Ancestral Tomb, Azura's Coast, undead
+Raviro Ancestral Tomb, Azura's Coast, vampires
+Alas Ancestral Tomb, Molag Amur, daedra
+Thiralas Ancestral Tomb, Grazelands, daedra
+Saren Ancestral Tomb, Ashlands, daedra
+Llando Ancestral Tomb, Ashlands, undead
+Aryon Ancestral Tomb, Ashlands, undead
+Drath Ancestral Tomb, Ashlands, undead daedra
+Alen Ancestral Tomb, West Gash, vampires
+Serano Ancestral Tomb, Molag Amur, vampires
+Arano Ancestral Tomb, Azura's Coast, daedra
+Verelnim Ancestral Tomb, Azura's Coast, daedra other
+Rothan Ancestral Tomb, Ashlands, undead
+Thalas Ancestral Tomb, Ashlands, undead
+Heran Ancestral Tomb, Bitter Coast, daedra
+Dreloth Ancestral Tomb, Azura's Coast, undead daedra
+Sarethi Ancestral Tomb, Sheogorad, vampires
+Velas Ancestral Tomb, Molag Amur, undead
+Omaren Ancestral Tomb, Azura's Coast, daedra
+Salothran Ancestral Tomb, West Gash, undead daedra
+Orethi Ancestral Tomb, Sheogorad, undead
+Sandus Ancestral Tomb, Ashlands, undead daedra
+Andules Ancestral Tomb, Molag Amur, daedra
+Drinith Ancestral Tomb, Ashlands, daedra
+Helan Ancestral Tomb, Molag Amur, undead
+Drethan Ancestral Tomb, Sheogorad, undead vampires
+Andas Ancestral Tomb, Molag Amur, undead
+Dareleth Ancestral Tomb, Ashlands, undead
+Andrano Ancestral Tomb, Bitter Coast, undead
+Foreign Quarter Tomb, Unknown, undead other
+Sadryon Ancestral Tomb, Azura's Coast, undead
+Omalen Ancestral Tomb, Ashlands, undead
+Ginith Ancestral Tomb, West Gash, vampires other
+Helas Ancestral Tomb, Ashlands, undead daedra
+Nelas Ancestral Tomb, Sheogorad, undead
+Andalen Ancestral Tomb, Azura's Coast, undead
+Savel Ancestral Tomb, Azura's Coast, undead
+Arenim Ancestral Tomb, Azura's Coast, undead
+Ravel Ancestral Tomb, Azura's Coast, daedra
+Andavel Ancestral Tomb, Sheogorad, daedra
+Rethandus Ancestral Tomb, West Gash, undead daedra
+Lleran Ancestral Tomb, Ascadian Isles, undead
+Sarys Ancestral Tomb, Bitter Coast, undead
+Seran Ancestral Tomb, West Gash, undead
+Veloth Ancestral Tomb, West Gash, undead daedra
+Favel Ancestral Tomb, Grazelands, undead
+Beran Ancestral Tomb, Azura's Coast, daedra
+Sethan Ancestral Tomb, Grazelands, undead
+Sarano Ancestral Tomb, Ascadian Isles, undead daedra
+Redas Ancestral Tomb, Azura's Coast, daedra
+Releth Ancestral Tomb, Azura's Coast, undead
+Tharys Ancestral Tomb, West Gash, undead
+Hleran Ancestral Tomb, West Gash, vampires
+Baram Ancestral Tomb, Azura's Coast, undead daedra
+Gimothran Ancestral Tomb, Molag Amur, undead other
+Maren Ancestral Tomb, Molag Amur, undead
+Llervu Ancestral Tomb, West Gash, undead
+Heleran Ancestral Tomb, West Gash, undead
+Reloth Ancestral Tomb, West Gash, undead vampires
+Sandas Ancestral Tomb, Ascadian Isles, undead
+Marvani Ancestral Tomb, Azura's Coast, undead
+Indaren Ancestral Tomb, Ashlands, daedra
+Arethan Ancestral Tomb, Molag Amur, undead daedra
+Dulo Ancestral Tomb, Molag Amur, vampires
+Dralas Ancestral Tomb, Sheogorad, undead
+Samarys Ancestral Tomb, Bitter Coast, undead
+Indalen Ancestral Tomb, West Gash, undead daedra
+Randas Ancestral Tomb, West Gash, daedra
+Hlaalu Ancestral Tomb, Azura's Coast, undead
+Salothan Ancestral Tomb, West Gash, daedra
+Nerano Ancestral Tomb, Grazelands, undead vampires
