@@ -6,7 +6,7 @@
     "file_type": "Esp",
     "author": "",
     "description": "",
-    "num_objects": 148,
+    "num_objects": 152,
     "masters": [
       [
         "Morrowind.esm",
@@ -198,6 +198,29 @@
     }
   },
   {
+    "type": "Enchanting",
+    "flags": "",
+    "id": "ck_mule",
+    "effects": [
+      {
+        "magic_effect": "Feather",
+        "skill": "None",
+        "attribute": "None",
+        "range": "OnSelf",
+        "area": 0,
+        "duration": 0,
+        "min_magnitude": 25,
+        "max_magnitude": 25
+      }
+    ],
+    "data": {
+      "enchant_type": "ConstantEffect",
+      "cost": 0,
+      "max_charge": 0,
+      "flags": "0xfffe"
+    }
+  },
+  {
     "type": "Npc",
     "flags": "",
     "id": "ck_boran_andules",
@@ -336,6 +359,34 @@
       "reputation": 0,
       "rank": 3,
       "gold": 0
+    }
+  },
+  {
+    "type": "Clothing",
+    "flags": "",
+    "id": "ck_mule_slippers",
+    "name": "Slippers of the Mule",
+    "script": "",
+    "mesh": "c\\C_shoes_Common1_GND.NIF",
+    "icon": "c\\Tx_Common1_Shoes.dds",
+    "enchanting": "ck_mule",
+    "biped_objects": [
+      {
+        "biped_object_type": "LeftFoot",
+        "male_bodypart": "C_shoes_Common_6",
+        "female_bodypart": ""
+      },
+      {
+        "biped_object_type": "RightFoot",
+        "male_bodypart": "C_shoes_Common_6",
+        "female_bodypart": ""
+      }
+    ],
+    "data": {
+      "clothing_type": "Shoes",
+      "weight": 1.0,
+      "value": 1300,
+      "enchantment": 10
     }
   },
   {
@@ -2433,17 +2484,17 @@
     "speaker_cell": "",
     "player_faction": "",
     "sound_path": "",
-    "text": "That's very unfortunate. I'm sure it wasn't your fault.",
+    "text": "I'm disappointed, but not surprised. I'm revoking your membership to the Dead Keepers. You are too irresponsible for this solemn work.",
     "filters": [
       {
         "index": 3,
-        "filter_type": "Function",
-        "function": "PcSpeechcraft",
-        "comparison": "GreaterEqual",
-        "id": "",
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "Greater",
+        "id": "CK_UrnsLost",
         "value": {
           "type": "Integer",
-          "data": 70
+          "data": 3
         }
       },
       {
@@ -2455,6 +2506,17 @@
         "value": {
           "type": "Integer",
           "data": 1
+        }
+      },
+      {
+        "index": 4,
+        "filter_type": "Global",
+        "function": "VariableCompare",
+        "comparison": "LessEqual",
+        "id": "CK_KeeperReputation",
+        "value": {
+          "type": "Integer",
+          "data": 20
         }
       },
       {
@@ -2480,7 +2542,7 @@
         }
       }
     ],
-    "script_text": ";CK_LOST_URN\nModPCFacRep, -5, \"Keepers of the Dead\"\nModDisposition -10\nGoodbye"
+    "script_text": ";CK_LOST_URN\nPCExpell, \"Keepers of the Dead\"\nModPCFacRep, -5, \"Temple\"\nModPCFacRep, -10, \"Keepers of the Dead\"\nModDisposition -30\n"
   },
   {
     "type": "DialogueInfo",
@@ -2538,7 +2600,7 @@
         }
       }
     ],
-    "script_text": "ModPCFacRep, -5, \"Temple\"\nModPCFacRep, -10, \"Keepers of the Dead\"\nModDisposition -30\n;CK_LOST_URN\nGoodbye"
+    "script_text": "ModPCFacRep, -5, \"Temple\"\nModPCFacRep, -10, \"Keepers of the Dead\"\nModDisposition -30\n;CK_LOST_URN\n"
   },
   {
     "type": "DialogueInfo",
@@ -2751,7 +2813,7 @@
     "speaker_cell": "",
     "player_faction": "Temple",
     "sound_path": "",
-    "text": "You say the Heran tomb was desecrated by Daedra? How awful for the family. Thank you for clearing it out.",
+    "text": "You say the Heran tomb was desecrated by Daedra? How awful for the family. Thank you for clearing it out. Please, take these scrolls in case you run into any more trouble.",
     "filters": [
       {
         "index": 0,
@@ -2765,7 +2827,7 @@
         }
       }
     ],
-    "script_text": "Journal \"ck_balmora_heran\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 5, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 400\n"
+    "script_text": "Journal \"ck_balmora_heran\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 5, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 400\nplayer->AddItem \"sc_almsiviintervention\" 3\n"
   },
   {
     "type": "DialogueInfo",
@@ -2895,7 +2957,7 @@
     "speaker_cell": "",
     "player_faction": "Temple",
     "sound_path": "",
-    "text": "Vampires in the Andrethi Tomb? And you've dispatched them all? You've done a great service today, %PCName. Thank you.",
+    "text": "Vampires in the Andrethi Tomb? And you've dispatched them all? You've done a great service today, %PCName.\n\nI feel terrible for putting you in such danger. Vampirism is a terrible curse. Allow me to teach you a spell to cleanse your blood.",
     "filters": [
       {
         "index": 0,
@@ -2909,7 +2971,7 @@
         }
       }
     ],
-    "script_text": "Journal \"ck_balmora_andrethi\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 5, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 400\n"
+    "script_text": "Journal \"ck_balmora_andrethi\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 5, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 400\nplayer->AddSpell \"cure common disease\"\n"
   },
   {
     "type": "DialogueInfo",
@@ -2988,6 +3050,53 @@
     "flags": "",
     "id": "791906573010671600256979472761",
     "prev_id": "355931737518062149783804275391",
+    "next_id": "116434935111168159647695061076",
+    "data": {
+      "dialogue_type": "Topic",
+      "disposition": 0,
+      "speaker_rank": -1,
+      "speaker_sex": "Any",
+      "player_rank": 1
+    },
+    "speaker_id": "feldrelo sadri",
+    "speaker_race": "",
+    "speaker_class": "",
+    "speaker_faction": "",
+    "speaker_cell": "",
+    "player_faction": "Temple",
+    "sound_path": "",
+    "text": "Daedra again? I'm beginning to suspect that there is a pattern to these desecrations. Go the Ghostgate and notify the Keepers of the Dead there. I'm sure they will want to get involved.\n\nAh, I forget myself. The backlog is finished, thanks to you. Please, take these slippers. You've been so helpful.",
+    "filters": [
+      {
+        "index": 1,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "ck_balmora_heran",
+        "value": {
+          "type": "Integer",
+          "data": 100
+        }
+      },
+      {
+        "index": 0,
+        "filter_type": "Journal",
+        "function": "JournalType",
+        "comparison": "Equal",
+        "id": "ck_balmora_saren",
+        "value": {
+          "type": "Integer",
+          "data": 50
+        }
+      }
+    ],
+    "script_text": "Journal \"ck_balmora_saren\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 5, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 400\nplayer->AddItem \"ck_mule_slippers\" 1\n; conditions on this are special\n; TODO: start a new quest about desecrated tombs"
+  },
+  {
+    "type": "DialogueInfo",
+    "flags": "",
+    "id": "116434935111168159647695061076",
+    "prev_id": "791906573010671600256979472761",
     "next_id": "388672228516008240977648739163",
     "data": {
       "dialogue_type": "Topic",
@@ -3003,7 +3112,7 @@
     "speaker_cell": "",
     "player_faction": "Temple",
     "sound_path": "",
-    "text": "Daedra again? I'm beginning to suspect that there is a pattern to these desecrations. Ah, I forget myself. The backlog is finished, thanks to you. Here is your reward.",
+    "text": "Daedra in the tomb? What a shame for the family, to allow their ancestors to be so desecrated. Thank you for securing the tomb.\n\nAh, I forget myself. The backlog is finished, thanks to you. Please, take these slippers. You've been so helpful.",
     "filters": [
       {
         "index": 0,
@@ -3017,13 +3126,13 @@
         }
       }
     ],
-    "script_text": "Journal \"ck_balmora_saren\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 5, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 400\n"
+    "script_text": "Journal \"ck_balmora_saren\" 100\nModPCFacRep, 1, \"Temple\"\nModPCFacRep, 5, \"Keepers of the Dead\"\nModDisposition 10\nplayer->AddItem \"Gold_001\" 400\nplayer->AddItem \"ck_mule_slippers\" 1"
   },
   {
     "type": "DialogueInfo",
     "flags": "",
     "id": "388672228516008240977648739163",
-    "prev_id": "791906573010671600256979472761",
+    "prev_id": "116434935111168159647695061076",
     "next_id": "160747797616908635148461045943",
     "data": {
       "dialogue_type": "Topic",
